@@ -1,7 +1,5 @@
 
-  # Portfolio Design with Pink
-
-  This is a code bundle for Portfolio Design with Pink. The original project is available at https://www.figma.com/design/HNT9WlWSkIiiGzJoE1YFws/Portfolio-Design-with-Pink.
+  # Portfolio MF
 
   ## Running the code
 
