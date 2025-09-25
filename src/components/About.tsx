@@ -1,6 +1,7 @@
 import { motion } from 'motion/react'
 import { Code, Zap, Users, Trophy, Sparkles, Star, Heart } from 'lucide-react'
 
+
 export function About() {
   const stats = [
     { icon: Code, label: 'Projetos', value: '50+' },
@@ -228,72 +229,10 @@ export function About() {
             </motion.div>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-6"
-          >
-            {stats.map((stat, index) => (
-              <motion.div
-                key={index}
-                whileHover={{ 
-                  scale: 1.08, 
-                  y: -10,
-                  rotateY: 5
-                }}
-                className="bg-gradient-to-br from-pink-500/10 to-purple-500/10 backdrop-blur border border-pink-500/30 rounded-3xl p-6 text-center group hover:border-pink-400/60 transition-all duration-500 relative overflow-hidden"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.15 }}
-                viewport={{ once: true }}
-              >
-                {/* Animated background gradient */}
-                <motion.div
-                  className="absolute inset-0 bg-gradient-to-br from-pink-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                  initial={false}
-                />
-                
-                {/* Floating particles */}
-                <motion.div
-                  className="absolute top-2 right-2 w-1 h-1 bg-pink-400 rounded-full"
-                  animate={{ 
-                    y: [0, -8, 0],
-                    opacity: [0.5, 1, 0.5]
-                  }}
-                  transition={{ 
-                    duration: 2,
-                    repeat: Infinity,
-                    delay: index * 0.5 
-                  }}
-                />
-                
-                <motion.div
-                  className="bg-gradient-to-r from-pink-500 to-purple-500 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 relative z-10"
-                  whileHover={{ 
-                    scale: 1.2, 
-                    rotate: 360,
-                    boxShadow: "0 0 30px rgba(255, 0, 110, 0.6)"
-                  }}
-                  transition={{ duration: 0.6 }}
-                >
-                  <stat.icon className="h-8 w-8 text-white" />
-                </motion.div>
-                
-                <motion.div 
-                  className="text-3xl font-bold text-pink-400 mb-2 relative z-10"
-                  whileHover={{ scale: 1.1 }}
-                >
-                  {stat.value}
-                </motion.div>
-                <div className="text-gray-300 relative z-10 font-medium">{stat.label}</div>
-              </motion.div>
-            ))}
-          </motion.div>
+          
         </div>
 
-        {/* Tech stack */}
+     
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -318,7 +257,7 @@ export function About() {
           </h3>
           
           <div className="flex flex-wrap justify-center gap-4">
-            {['React', 'TypeScript', 'Node.js', 'Python', 'PostgreSQL', 'Docker', 'AWS', 'Figma'].map((tech, index) => (
+            {['React', 'TypeScript', 'Node.js', 'JavaScript', 'PostgreSQL', 'Docker', 'CSS/HTML', 'Figma'].map((tech, index) => (
               <motion.span
                 key={tech}
                 initial={{ opacity: 0, scale: 0.8, y: 20 }}

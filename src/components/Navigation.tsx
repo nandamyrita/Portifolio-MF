@@ -1,19 +1,19 @@
-import { motion } from 'motion/react'
-import { useState } from 'react'
-import { Menu, X, Code, Download } from 'lucide-react'
-import { Button } from './ui/button'
+import { motion } from "motion/react";
+import { useState } from "react";
+import { Menu, X, Code, Download } from "lucide-react";
+import { Button } from "./ui/button";
 
 export function Navigation() {
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
 
   const navItems = [
-    { name: 'Início', href: '#home' },
-    { name: 'Sobre', href: '#about' },
-    { name: 'Experiências', href: '#experience' },
-    { name: 'Projetos', href: '#projects' },
-    { name: 'Skills', href: '#skills' },
-    { name: 'Contato', href: '#contact' }
-  ]
+    { name: "Início", href: "#home" },
+    { name: "Sobre", href: "#about" },
+    { name: "Experiências", href: "#experience" },
+    { name: "Projetos", href: "#projects" },
+    { name: "Skills", href: "#skills" },
+    { name: "Contato", href: "#contact" },
+  ];
 
   return (
     <motion.nav
@@ -22,74 +22,20 @@ export function Navigation() {
       transition={{ duration: 0.8 }}
       className="fixed top-0 left-0 right-0 z-50  backdrop-blur-lg bg-transparent"
     >
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="flex items-center justify-between h-20">
-          {/* Logo */}
-          <motion.div
-            whileHover={{ scale: 1.05, rotate: 2 }}
-            className="flex items-center gap-3"
-          >
-            <div className="relative">
-              <div className="bg-gradient-to-r from-rose-500 to-pink-500 w-12 h-12 rounded-2xl flex items-center justify-center relative overflow-hidden">
-                <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-pink-400 to-pink-400 opacity-0"
-                  whileHover={{ opacity: 0.3 }}
-                  transition={{ duration: 0.3 }}
-                />
-                <span className="text-white font-bold text-lg z-10">MF</span>
-              </div>
-              <motion.div
-                className="absolute -top-1 -right-1 w-3 h-3 bg-pink-400 rounded-full"
-                animate={{ 
-                  scale: [1, 1.2, 1],
-                  opacity: [0.7, 1, 0.7]
-                }}
-                transition={{ 
-                  duration: 2,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-              />
-            </div>
-            <div className="flex flex-col">
-              <motion.span 
-                className="text-xl font-bold bg-gradient-to-r from-pink-400 to-pink-500 bg-clip-text text-transparent"
-                animate={{ 
-                  backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
-                }}
-                transition={{ 
-                  duration: 3,
-                  repeat: Infinity,
-                  ease: "linear"
-                }}
-              >
-               
-              </motion.span>
-              
-            </div>
-          </motion.div>
-
+      <div className="max-w-7xl mx-auto px-6 justify-between">
+        <div className="flex items-center justify-center h-20">
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-4">
             {/* Download CV Button */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5 }}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Button
-                size="sm"
-                className="bg-gradient-to-r from-pink-500 to-pink-500 hover:from-pink-600 hover:to-pink-400 border-0 text-white px-4 py-2 rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-pink-500/25 group"
-              >
-                <Download className="h-4 w-4 mr-2 group-hover:animate-bounce" />
-                Currículo
-              </Button>
-            </motion.div>
 
             {/* Navigation Pills */}
             <div className="flex items-center gap-2 bg-gray-800/50 backdrop-blur border border-pink-500/20 rounded-full p-2">
+              <img
+                className="w-14 p-2 mr-7"
+                src="src/images/logo.png"
+                alt="logo"
+              />
+
               {navItems.map((item, index) => (
                 <motion.a
                   key={item.name}
@@ -105,9 +51,26 @@ export function Navigation() {
                     className="absolute inset-0 bg-gradient-to-r from-pink-500 to-pink-500 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                     whileHover={{ scale: 1.05 }}
                   />
-                  <span className="relative z-10 text-sm font-medium">{item.name}</span>
+                  <span className="relative z-10 text-sm font-medium">
+                    {item.name}
+                  </span>
                 </motion.a>
               ))}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5 }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <Button
+                  size="sm"
+                  className="bg-gradient-to-r from-pink-500 to-pink-500 hover:from-pink-600 hover:to-pink-400 border-0 text-white px-5 py-5 rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-pink-500/25 group ml-6"
+                >
+                  <Download className="h-4 w-4 mr-2 group-hover:animate-bounce" />
+                  Currículo
+                </Button>
+              </motion.div>
             </div>
           </div>
 
@@ -125,9 +88,9 @@ export function Navigation() {
         {/* Mobile Navigation */}
         <motion.div
           initial={{ opacity: 0, height: 0 }}
-          animate={{ 
-            opacity: isOpen ? 1 : 0, 
-            height: isOpen ? 'auto' : 0 
+          animate={{
+            opacity: isOpen ? 1 : 0,
+            height: isOpen ? "auto" : 0,
           }}
           transition={{ duration: 0.3 }}
           className="md:hidden overflow-hidden"
@@ -136,9 +99,9 @@ export function Navigation() {
             {/* Mobile Download CV Button */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
-              animate={{ 
-                opacity: isOpen ? 1 : 0, 
-                x: isOpen ? 0 : -20 
+              animate={{
+                opacity: isOpen ? 1 : 0,
+                x: isOpen ? 0 : -20,
               }}
               transition={{ duration: 0.3 }}
               className="mb-4"
@@ -157,9 +120,9 @@ export function Navigation() {
                 key={item.name}
                 href={item.href}
                 initial={{ opacity: 0, x: -20 }}
-                animate={{ 
-                  opacity: isOpen ? 1 : 0, 
-                  x: isOpen ? 0 : -20 
+                animate={{
+                  opacity: isOpen ? 1 : 0,
+                  x: isOpen ? 0 : -20,
                 }}
                 transition={{ duration: 0.3, delay: index * 0.1 }}
                 onClick={() => setIsOpen(false)}
@@ -172,5 +135,5 @@ export function Navigation() {
         </motion.div>
       </div>
     </motion.nav>
-  )
+  );
 }

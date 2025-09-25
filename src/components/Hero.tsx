@@ -1,19 +1,20 @@
 import { motion } from 'motion/react'
 import { ArrowRight, Github, Linkedin, Mail, Code } from 'lucide-react'
 import { Button } from './ui/button'
+import '../index.css'
 
 export function Hero() {
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
       {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-pink-600/20 via-black to-purple-600/20" />
+      <div className="absolute inset-0 bg-gradient-to-br from-pink-400/20 via-black to-orange-400/20" />
       
       {/* Animated background elements */}
       <div className="absolute inset-0">
         {[...Array(5)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute rounded-full bg-gradient-to-r from-pink-500/10 to-purple-500/10"
+            className="absolute rounded-full bg-gradient-to-r from-pink-400/10 to-orange-400/10"
             style={{
               width: Math.random() * 300 + 100,
               height: Math.random() * 300 + 100,
@@ -64,7 +65,7 @@ export function Hero() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.3 }}
               >
-                <span className="bg-gradient-to-r from-pink-400 via-pink-500 to-purple-500 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-pink-600 via-pink-500 to-orange-600 bg-clip-text text-transparent">
                   Maria Fernanda
                 </span>
               </motion.h1>
@@ -96,7 +97,7 @@ export function Hero() {
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
             <Button
               size="lg"
-              className="group bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 border-0 text-white px-8 py-6 text-lg rounded-2xl transition-all duration-300 hover:shadow-2xl hover:shadow-pink-500/25 relative overflow-hidden"
+              className="group bg-pink-600 hover:from-pink-600 hover:to-rose-600 border-0 text-white px-8 py-6 text-lg rounded-2xl transition-all duration-300 hover:shadow-2xl hover:shadow-pink-500/25 relative overflow-hidden"
             >
               <motion.div
                 className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0"
@@ -115,7 +116,7 @@ export function Hero() {
               whileHover={{ 
                 scale: 1.15, 
                 rotate: 360,
-                background: 'linear-gradient(45deg, #ff006e, #8b5cf6)'
+                background: 'linear-gradient(45deg, #ff006e, ##f97310)'
               }}
               whileTap={{ scale: 0.9 }}
               className="p-4 bg-gray-800/50 backdrop-blur border border-pink-500/30 rounded-2xl hover:bg-pink-500/20 transition-all duration-500 group"
@@ -179,8 +180,8 @@ export function Hero() {
                 transition={{ duration: 0.3 }}
               >
                 <img 
-                  src="https://images.unsplash.com/photo-1712174766230-cb7304feaafe?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjB3b21hbiUyMGRldmVsb3BlciUyMHBvcnRyYWl0fGVufDF8fHx8MTc1ODY4MDQ0Nnww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-                  alt="Maria Fernanda"
+                  src=""
+                  alt=""
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-pink-500/20 to-transparent" />
