@@ -20,7 +20,7 @@ export function About() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-pink-400 to-purple-500 bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-pink-500 to-orange-500 bg-clip-text text-transparent">
             Sobre Mim
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
@@ -59,7 +59,7 @@ export function About() {
               />
               
               <motion.div
-                className="absolute -top-2 -right-6 w-6 h-6 bg-purple-500 rounded-md"
+                className="absolute -top-2 -right-6 w-6 h-6 bg-orange-500 rounded-md"
                 animate={{ 
                   y: [0, -10, 0],
                   rotate: [0, -45, 0],
@@ -77,7 +77,7 @@ export function About() {
               />
 
               <motion.div
-                className="absolute -bottom-4 -right-4 w-10 h-10 bg-gradient-to-r from-pink-400 to-purple-400 rounded-lg flex items-center justify-center"
+                className="absolute -bottom-4 -right-4 w-10 h-10 bg-gradient-to-r from-pink-500 to-orange-400 rounded-lg flex items-center justify-center"
                 animate={{ 
                   y: [0, 12, 0],
                   x: [0, 8, 0]
@@ -102,24 +102,16 @@ export function About() {
                   filter: 'contrast(1.1) saturate(1.2)'
                 }}
               >
-                <img 
-                  src="https://images.unsplash.com/photo-1692306088530-e81ab626753b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwaXhlbCUyMGFydCUyMHdvbWFuJTIwZGV2ZWxvcGVyJTIwOGJpdHxlbnwxfHx8fDE3NTg3NDY3MTJ8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-                  alt="Maria Fernanda - Pixel Art Style"
-                  className="w-full h-full object-cover"
-                  style={{
-                    imageRendering: 'pixelated',
-                    filter: 'contrast(1.2) brightness(1.1)'
-                  }}
-                />
+               
                 
                 {/* Pixel overlay effects */}
-                <div className="absolute inset-0 bg-gradient-to-br from-pink-500/20 via-transparent to-purple-500/20" />
+                <div className="absolute inset-0 bg-gradient-to-br from-pink-500/20 via-transparent to-orange-500/20" />
                 
                 {/* Animated pixel sparkles */}
                 {[...Array(8)].map((_, i) => (
                   <motion.div
                     key={i}
-                    className="absolute w-2 h-2 bg-pink-400 rounded-sm"
+                    className="absolute w-2 h-2 bg-pink-500 rounded-sm"
                     style={{
                       left: Math.random() * 100 + '%',
                       top: Math.random() * 100 + '%',
@@ -139,23 +131,7 @@ export function About() {
                 ))}
               </motion.div>
 
-              {/* Status indicator */}
-              <motion.div
-                className="absolute top-4 right-4 bg-green-500 px-3 py-1 rounded-full text-xs text-white font-bold border-2 border-black"
-                animate={{ 
-                  scale: [1, 1.1, 1],
-                }}
-                transition={{ 
-                  duration: 2,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-                style={{
-                  imageRendering: 'pixelated'
-                }}
-              >
-                ONLINE
-              </motion.div>
+              
             </div>
           </motion.div>
 
@@ -173,14 +149,14 @@ export function About() {
               transition={{ duration: 0.3 }}
             >
               <motion.div
-                className="absolute top-4 right-4 text-pink-400"
+                className="absolute top-4 right-4 text-pink-500"
                 animate={{ rotate: [0, 360] }}
                 transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
               >
                 <Star className="h-6 w-6" />
               </motion.div>
               
-              <h3 className="text-2xl font-bold text-pink-400 mb-4 flex items-center gap-2">
+              <h3 className="text-2xl font-bold text-pink-500 mb-4 flex items-center gap-2">
                 <Sparkles className="h-6 w-6" />
                 Minha Jornada
               </h3>
@@ -191,7 +167,7 @@ export function About() {
               </p>
               
               <motion.div
-                className="absolute inset-0 bg-gradient-to-br from-pink-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                className="absolute inset-0 bg-gradient-to-br from-pink-500/5 to-orange-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                 initial={false}
               />
             </motion.div>
@@ -202,7 +178,7 @@ export function About() {
               transition={{ duration: 0.3 }}
             >
               <motion.div
-                className="absolute top-4 right-4 text-purple-400"
+                className="absolute top-4 right-4 text-orange-400"
                 animate={{ 
                   scale: [1, 1.2, 1],
                   rotate: [0, 180, 360]
@@ -212,7 +188,7 @@ export function About() {
                 <Heart className="h-6 w-6" />
               </motion.div>
               
-              <h3 className="text-2xl font-bold text-pink-400 mb-4 flex items-center gap-2">
+              <h3 className="text-2xl font-bold text-pink-500 mb-4 flex items-center gap-2">
                 <Code className="h-6 w-6" />
                 Filosofia
               </h3>
@@ -223,7 +199,7 @@ export function About() {
               </p>
               
               <motion.div
-                className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                className="absolute inset-0 bg-gradient-to-br from-orange-500/5 to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                 initial={false}
               />
             </motion.div>
@@ -240,7 +216,7 @@ export function About() {
           viewport={{ once: true }}
           className="text-center"
         >
-          <h3 className="text-3xl font-bold text-pink-400 mb-12 flex items-center justify-center gap-3">
+          <h3 className="text-3xl font-bold text-pink-500 mb-12 flex items-center justify-center gap-3">
             <motion.div
               animate={{ rotate: [0, 360] }}
               transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
@@ -270,11 +246,11 @@ export function About() {
                   rotate: [0, 5, -5, 0],
                   boxShadow: "0 10px 30px rgba(255, 0, 110, 0.3)"
                 }}
-                className="px-8 py-4 bg-gradient-to-r from-pink-500/20 to-purple-500/20 backdrop-blur border border-pink-500/30 rounded-2xl text-pink-300 hover:border-pink-400/70 hover:text-white transition-all duration-500 relative overflow-hidden group cursor-pointer"
+                className="px-8 py-4 bg-gradient-to-r from-pink-500/20 to-orange-500/20 backdrop-blur border border-pink-500/30 rounded-2xl text-pink-300 hover:border-pink-500/70 hover:text-white transition-all duration-500 relative overflow-hidden group cursor-pointer"
               >
                 {/* Animated background on hover */}
                 <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-pink-500/30 to-purple-500/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  className="absolute inset-0 bg-gradient-to-r from-pink-500/30 to-orange-500/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                   initial={false}
                 />
                 

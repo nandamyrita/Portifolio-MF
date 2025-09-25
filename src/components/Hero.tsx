@@ -116,7 +116,7 @@ export function Hero() {
               whileHover={{ 
                 scale: 1.15, 
                 rotate: 360,
-                background: 'linear-gradient(45deg, #ff006e, ##f97310)'
+                background: 'linear-gradient(45deg, #ff006e, #f97310)'
               }}
               whileTap={{ scale: 0.9 }}
               className="p-4 bg-gray-800/50 backdrop-blur border border-pink-500/30 rounded-2xl hover:bg-pink-500/20 transition-all duration-500 group"
@@ -128,7 +128,7 @@ export function Hero() {
               whileHover={{ 
                 scale: 1.15, 
                 rotate: -360,
-                background: 'linear-gradient(45deg, #8b5cf6, #ff006e)'
+                background: 'linear-gradient(45deg, #ff006e, #f97310)'
               }}
               whileTap={{ scale: 0.9 }}
               className="p-4 bg-gray-800/50 backdrop-blur border border-pink-500/30 rounded-2xl hover:bg-pink-500/20 transition-all duration-500 group"
@@ -140,7 +140,7 @@ export function Hero() {
               whileHover={{ 
                 scale: 1.15, 
                 rotate: 360,
-                background: 'linear-gradient(45deg, #ff006e, #8b5cf6)'
+                background: 'linear-gradient(45deg, #ff006e, #f97310)'
               }}
               whileTap={{ scale: 0.9 }}
               className="p-4 bg-gray-800/50 backdrop-blur border border-pink-500/30 rounded-2xl hover:bg-pink-500/20 transition-all duration-500 group"
@@ -162,7 +162,7 @@ export function Hero() {
             <div className="relative">
               {/* Decorative elements */}
               <motion.div
-                className="absolute -inset-4 bg-gradient-to-r from-pink-500/20 to-purple-500/20 rounded-3xl blur-xl"
+                className="absolute -inset-4 bg-gradient-to-r from-pink-500/20 to-orange-500/20 rounded-3xl blur-xl"
                 animate={{ 
                   scale: [1, 1.05, 1],
                   opacity: [0.5, 0.8, 0.5]
@@ -189,7 +189,7 @@ export function Hero() {
 
               {/* Floating elements */}
               <motion.div
-                className="absolute -top-6 -right-6 w-12 h-12 bg-gradient-to-r from-pink-500 to-purple-500 rounded-xl flex items-center justify-center"
+                className="absolute -top-6 -right-6 w-12 h-12 bg-gradient-to-r from-pink-500 to-orange-500 rounded-xl flex items-center justify-center"
                 animate={{ 
                   y: [0, -10, 0],
                   rotate: [0, 5, 0]
@@ -204,7 +204,7 @@ export function Hero() {
               </motion.div>
 
               <motion.div
-                className="absolute -bottom-6 -left-6 w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center"
+                className="absolute -bottom-6 -left-6 w-16 h-16 bg-gradient-to-r from-orange-500 to-pink-500 rounded-2xl flex items-center justify-center"
                 animate={{ 
                   y: [0, 10, 0],
                   rotate: [0, -5, 0]
@@ -231,7 +231,7 @@ export function Hero() {
         animate={{ y: [0, 10, 0] }}
         transition={{ duration: 2, repeat: Infinity }}
       >
-        <div className="w-6 h-10 border-2 border-pink-400 rounded-full flex justify-center">
+        <div className="w-6 h-10 border-2 border-pink-500 rounded-full flex justify-center">
           <div className="w-1 h-3 bg-pink-400 rounded-full mt-2"></div>
         </div>
       </motion.div>
