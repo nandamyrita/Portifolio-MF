@@ -15,9 +15,9 @@ export function Footer() {
           {/* Logo and tagline */}
           <div className="flex items-center justify-center gap-3 mb-8">
             <div className="relative">
-              <div className="bg-gradient-to-r from-pink-500 to-purple-500 w-12 h-12 rounded-2xl flex items-center justify-center relative overflow-hidden">
+              <div className="bg-gradient-to-r from-pink-500 to-orange-500 w-12 h-12 rounded-2xl flex items-center justify-center relative overflow-hidden">
                 <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-pink-400 to-purple-400 opacity-0"
+                  className="absolute inset-0 bg-gradient-to-r from-pink-400 to-orange-400 opacity-0"
                   whileHover={{ opacity: 0.3 }}
                   transition={{ duration: 0.3 }}
                 />
@@ -36,7 +36,7 @@ export function Footer() {
                 }}
               />
             </div>
-            <span className="text-2xl font-bold bg-gradient-to-r from-pink-400 to-purple-500 bg-clip-text text-transparent">
+            <span className="text-2xl font-bold bg-gradient-to-r from-pink-400 to-orange-500 bg-clip-text text-transparent">
               Maria Fernanda
             </span>
           </div>
@@ -92,7 +92,7 @@ export function Footer() {
             {[...Array(3)].map((_, i) => (
               <motion.div
                 key={i}
-                className="w-2 h-2 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full"
+                className="w-2 h-2 bg-gradient-to-r from-pink-500 to-orange-500 rounded-full"
                 animate={{
                   scale: [1, 1.5, 1],
                   opacity: [0.5, 1, 0.5],

@@ -283,7 +283,7 @@ export function Experience() {
             href="#contact"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="inline-block bg-gradient-to-r from-pink-500 to-orange-500/50 hover:from-pink-600 hover:to-purple-600 text-white px-8 py-4 rounded-xl transition-all duration-300 hover:shadow-2xl hover:shadow-pink-500/25"
+            className="inline-block bg-gradient-to-r from-pink-500 to-orange-500/50 hover:from-pink-600 hover:to-orange-600 text-white px-8 py-4 rounded-xl transition-all duration-300 hover:shadow-2xl hover:shadow-pink-500/25"
           >
             Vamos conversar!
           </motion.a>

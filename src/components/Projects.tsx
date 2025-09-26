@@ -1,38 +1,46 @@
-import { motion } from 'motion/react'
-import { ExternalLink, Github, Sparkles } from 'lucide-react'
-import { Button } from './ui/button'
+import { motion } from "motion/react";
+import { ExternalLink, Github, Sparkles } from "lucide-react";
+import { Button } from "./ui/button";
 
 export function Projects() {
   const projects = [
     {
-      title: 'E-commerce Futurístico',
-      description: 'Plataforma de e-commerce com IA integrada, design moderno e experiência de usuário inovadora.',
-      image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop',
-      tech: ['React', 'TypeScript', 'Stripe', 'AI'],
-      gradient: 'from-pink-500 to-rose-500'
+      title: "E-commerce Futurístico",
+      description:
+        "Plataforma de e-commerce com IA integrada, design moderno e experiência de usuário inovadora.",
+      image:
+        "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop",
+      tech: ["React", "TypeScript", "Stripe", "AI"],
+      gradient: "from-pink-500 to-rose-500",
     },
     {
-      title: 'Dashboard Analytics',
-      description: 'Dashboard completo com visualizações de dados em tempo real e insights avançados.',
-      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop',
-      tech: ['Next.js', 'Chart.js', 'PostgreSQL', 'Redis'],
-      gradient: 'from-purple-500 to-indigo-500'
+      title: "Dashboard Analytics",
+      description:
+        "Dashboard completo com visualizações de dados em tempo real e insights avançados.",
+      image:
+        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop",
+      tech: ["Next.js", "Chart.js", "PostgreSQL", "Redis"],
+      gradient: "from-orange-500 to-indigo-500",
     },
     {
-      title: 'App de Produtividade',
-      description: 'Aplicativo mobile para gestão de tarefas com sincronização em nuvem e colaboração.',
-      image: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=600&fit=crop',
-      tech: ['React Native', 'Node.js', 'MongoDB', 'Socket.io'],
-      gradient: 'from-cyan-500 to-blue-500'
+      title: "App de Produtividade",
+      description:
+        "Aplicativo mobile para gestão de tarefas com sincronização em nuvem e colaboração.",
+      image:
+        "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=600&fit=crop",
+      tech: ["React Native", "Node.js", "MongoDB", "Socket.io"],
+      gradient: "from-cyan-500 to-blue-500",
     },
     {
-      title: 'Platform SaaS',
-      description: 'Plataforma SaaS completa com autenticação, billing e multi-tenancy.',
-      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop',
-      tech: ['Vue.js', 'Laravel', 'AWS', 'Stripe'],
-      gradient: 'from-emerald-500 to-teal-500'
-    }
-  ]
+      title: "Platform SaaS",
+      description:
+        "Plataforma SaaS completa com autenticação, billing e multi-tenancy.",
+      image:
+        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop",
+      tech: ["Vue.js", "Laravel", "AWS", "Stripe"],
+      gradient: "from-emerald-500 to-teal-500",
+    },
+  ];
 
   return (
     <section className="py-20 px-6 relative overflow-hidden">
@@ -46,7 +54,7 @@ export function Projects() {
         >
           <div className="flex items-center justify-center gap-3 mb-6">
             <Sparkles className="h-8 w-8 text-pink-400" />
-            <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-pink-400 to-purple-500 bg-clip-text text-transparent">
+            <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-pink-400 to-orange-500 bg-clip-text text-transparent">
               Projetos em Destaque
             </h2>
             <Sparkles className="h-8 w-8 text-pink-400" />
@@ -69,19 +77,19 @@ export function Projects() {
             >
               {/* Project image */}
               <div className="relative h-64 overflow-hidden">
-                <motion.img 
-                  src={project.image} 
+                <motion.img
+                  src={project.image}
                   alt={project.title}
                   className="w-full h-full object-cover"
                   whileHover={{ scale: 1.15, rotate: 2 }}
                   transition={{ duration: 0.6, ease: "easeOut" }}
                 />
-                <motion.div 
+                <motion.div
                   className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-20`}
                   whileHover={{ opacity: 0.4 }}
                   transition={{ duration: 0.3 }}
                 />
-                
+
                 {/* Hover overlay with animated elements */}
                 <motion.div
                   className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"
@@ -122,23 +130,26 @@ export function Projects() {
 
                 {/* Project links */}
                 <div className="flex gap-4">
-                  <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                  <motion.div
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
                     <Button
                       size="sm"
-                      className="bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 border-0 text-white group/btn relative overflow-hidden"
+                      className="bg-gradient-to-r from-pink-500 to-orange-500 hover:from-pink-600 hover:to-orange-600 border-0 text-white group/btn relative overflow-hidden"
                     >
                       <motion.div
                         className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/30 to-white/0"
-                        initial={{ x: '-100%' }}
-                        whileHover={{ x: '100%' }}
+                        initial={{ x: "-100%" }}
+                        whileHover={{ x: "100%" }}
                         transition={{ duration: 0.6 }}
                       />
                       <ExternalLink className="h-4 w-4 mr-2 group-hover/btn:rotate-45 transition-transform relative z-10" />
                       Ver Projeto
                     </Button>
                   </motion.div>
-                  <motion.div 
-                    whileHover={{ scale: 1.05, rotateZ: 5 }} 
+                  <motion.div
+                    whileHover={{ scale: 1.05, rotateZ: 5 }}
                     whileTap={{ scale: 0.95 }}
                   >
                     <Button
@@ -161,7 +172,7 @@ export function Projects() {
 
               {/* Decorative elements */}
               <div className="absolute top-4 right-4 w-2 h-2 bg-pink-400 rounded-full animate-pulse" />
-              <div className="absolute top-4 right-8 w-1 h-1 bg-purple-400 rounded-full animate-pulse delay-300" />
+              <div className="absolute top-4 right-8 w-1 h-1 bg-orange-400 rounded-full animate-pulse delay-300" />
             </motion.div>
           ))}
         </div>
@@ -184,5 +195,5 @@ export function Projects() {
         </motion.div>
       </div>
     </section>
-  )
+  );
 }

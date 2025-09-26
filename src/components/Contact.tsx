@@ -42,7 +42,7 @@ export function Contact() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-pink-400 to-purple-500 bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-pink-400 to-orange-500 bg-clip-text text-transparent">
             Vamos Conversar?
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
@@ -69,7 +69,7 @@ export function Contact() {
                     whileHover={{ scale: 1.02, x: 5 }}
                     className="flex items-center gap-4 p-4 bg-pink-500/10 rounded-xl border border-pink-500/20 hover:border-pink-400/40 hover:bg-pink-500/20 transition-all duration-300 group"
                   >
-                    <div className="bg-gradient-to-r from-pink-500 to-purple-500 w-12 h-12 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <div className="bg-gradient-to-r from-pink-500 to-orange-500 w-12 h-12 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
                       <info.icon className="h-6 w-6 text-white" />
                     </div>
                     <div>
@@ -91,7 +91,7 @@ export function Contact() {
                     href={social.href}
                     whileHover={{ scale: 1.1, rotate: 5 }}
                     whileTap={{ scale: 0.95 }}
-                    className="p-4 bg-gradient-to-r from-pink-500/20 to-purple-500/20 rounded-xl border border-pink-500/30 hover:border-pink-400/50 hover:bg-pink-500/30 transition-all duration-300 group"
+                    className="p-4 bg-gradient-to-r from-pink-500/20 to-orange-500/20 rounded-xl border border-pink-500/30 hover:border-pink-400/50 hover:bg-pink-500/30 transition-all duration-300 group"
                   >
                     <social.icon className="h-6 w-6 text-pink-400 group-hover:text-pink-300" />
                   </motion.a>
@@ -149,7 +149,7 @@ export function Contact() {
                 <Button
                   type="submit"
                   size="lg"
-                  className="w-full bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 border-0 text-white py-6 text-lg rounded-xl transition-all duration-300 hover:shadow-2xl hover:shadow-pink-500/25 group"
+                  className="w-full bg-gradient-to-r from-pink-500 to-orange-500 hover:from-pink-600 hover:to-orange-600 border-0 text-white py-6 text-lg rounded-xl transition-all duration-300 hover:shadow-2xl hover:shadow-pink-500/25 group"
                 >
                   <Send className="mr-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                   Enviar Mensagem
@@ -165,7 +165,7 @@ export function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mt-16 p-8 bg-gradient-to-r from-pink-500/10 to-purple-500/10 backdrop-blur border border-pink-500/30 rounded-2xl"
+          className="text-center mt-16 p-8 bg-gradient-to-r from-pink-500/10 to-orange-500/10 backdrop-blur border border-pink-500/30 rounded-2xl"
         >
           <h3 className="text-2xl font-bold text-pink-400 mb-4">Pronto para o próximo projeto?</h3>
           <p className="text-gray-300 mb-6">
@@ -173,7 +173,7 @@ export function Contact() {
           </p>
           <Button
             size="lg"
-            className="bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 border-0 text-white px-8 py-6 text-lg rounded-xl transition-all duration-300 hover:scale-105"
+            className="bg-gradient-to-r from-pink-500 to-orange-500 hover:from-pink-600 hover:to-orange-600 border-0 text-white px-8 py-6 text-lg rounded-xl transition-all duration-300 hover:scale-105"
           >
             Iniciar Projeto
           </Button>
