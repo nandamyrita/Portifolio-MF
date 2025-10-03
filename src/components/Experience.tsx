@@ -11,68 +11,53 @@ export function Experience() {
 
   const lineHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
-  const experiences = [
-    {
-      title: "Senior Full Stack Developer",
-      company: "TechCorp Solutions",
-      period: "2022 - Presente",
-      location: "São Paulo, SP",
-      description:
-        "Lidero equipe de desenvolvimento de aplicações web escaláveis usando React, Node.js e AWS. Responsável por arquitetura de sistemas e mentoria de desenvolvedores juniores.",
-      achievements: [
-        "Aumentei a performance das aplicações em 40%",
-        "Liderei migração para arquitetura de microserviços",
-        "Mentoreei 8+ desenvolvedores juniores",
-      ],
-      tech: ["React", "Node.js", "TypeScript", "AWS", "Docker"],
-      highlight: true,
-    },
-    {
-      title: "Full Stack Developer",
-      company: "StartupTech",
-      period: "2020 - 2022",
-      location: "São Paulo, SP",
-      description:
-        "Desenvolvi aplicações web completas do zero, trabalhando diretamente com fundadores para transformar ideias em produtos digitais.",
-      achievements: [
-        "Desenvolvi 5+ aplicações web do zero",
-        "Implementei sistema de pagamentos integrado",
-        "Reduzi tempo de carregamento em 60%",
-      ],
-      tech: ["Vue.js", "Python", "PostgreSQL", "Stripe"],
-      highlight: false,
-    },
-    {
-      title: "Frontend Developer",
-      company: "Digital Agency",
-      period: "2019 - 2020",
-      location: "São Paulo, SP",
-      description:
-        "Criei interfaces responsivas e interativas para diversos clientes, focando em experiência do usuário e performance.",
-      achievements: [
-        "Entreguei 20+ projetos para clientes",
-        "Implementei design system da empresa",
-        "Alcancei 98% de satisfação dos clientes",
-      ],
-      tech: ["React", "SASS", "JavaScript", "Figma"],
-      highlight: false,
-    },
-    {
-      title: "Junior Developer",
-      company: "CodeStart",
-      period: "2018 - 2019",
-      location: "São Paulo, SP",
-      description:
-        "Iniciei minha carreira desenvolvendo websites e aprendendo as melhores práticas de desenvolvimento web.",
-      achievements: [
-        "Completei 10+ projetos web",
-        "Aprendi frameworks modernos",
-        "Participei de hackathons",
-      ],
-      tech: ["HTML", "CSS", "JavaScript", "jQuery"],
-      highlight: false,
-    },
-  ];
+ const experiences = [
+  {
+    title: "Tecnóloga em Desenvolvimento de Software Multiplataforma",
+    company: "FATEC Zona Leste",
+    period: "2024 - Presente",
+    location: "São Paulo, SP",
+    description:
+      "Cursando graduação focada em desenvolvimento full stack, com ênfase em criação de aplicações web, arquitetura de sistemas e boas práticas de programação.",
+    achievements: [
+      "Participei de diversos projetos acadêmicos utilizando React, Node.js e Firebase",
+      "Aprendi metodologias ágeis e trabalho colaborativo em equipe",
+      "Desenvolvi aplicações com foco em usabilidade e experiência do usuário",
+    ],
+    tech: ["React", "Node.js", "TypeScript", "Firebase", "Git"],
+    highlight: true,
+  },
+  {
+    title: "Desenvolvedora Web Freelancer",
+    company: "Adega Local",
+    period: "2024",
+    location: "São Paulo, SP",
+    description:
+      "Desenvolvi um sistema simples de controle de estoque personalizado para uma adega, permitindo cadastrar, atualizar e acompanhar produtos em tempo real.",
+    achievements: [
+      "Criei interface intuitiva para registro e atualização de produtos",
+      "Implementei alertas automáticos para produtos com estoque baixo",
+      "Organizei banco de dados para fácil manutenção e escalabilidade",
+    ],
+    tech: ["React", "Node.js", "MongoDB", "Tailwind CSS"],
+    highlight: false,
+  },
+  {
+    title: "Desenvolvedora Frontend",
+    company: "Patty Nails",
+    period: "2024",
+    location: "São Paulo, SP",
+    description:
+      "Desenvolvi uma landing page moderna e responsiva para um salão de beleza, destacando serviços, portfólio e canais de contato.",
+    achievements: [
+      "Criei layout atraente com foco em identidade visual e experiência do usuário",
+      "Implementei formulário de agendamento integrado ao e-mail do salão",
+      "Aumentei a presença digital do negócio e facilitei a captação de clientes",
+    ],
+    tech: ["HTML", "CSS", "JavaScript", "Tailwind CSS"],
+    highlight: false,
+  },
+];
 
   return (
     <section ref={containerRef} className="py-20 px-6 relative overflow-hidden">

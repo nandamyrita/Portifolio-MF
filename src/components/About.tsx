@@ -24,9 +24,9 @@ export function About() {
             Sobre Mim
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            Sou um desenvolvedor apaixonado por tecnologia e inovação, especializado em criar 
-            soluções digitais que fazem a diferença. Com expertise em desenvolvimento full-stack 
-            e uma mente criativa, transformo ideias em realidade digital.
+            Sou desenvolvedora full-stack com foco em FrontEnd, familiarizada com as principais
+            tecnologias do mercado. Adoro criar interfaces bonitas e funcionais que proporcionem 
+            experiências incríveis aos usuário.
           </p>
         </motion.div>
 
@@ -161,9 +161,7 @@ export function About() {
                 Minha Jornada
               </h3>
               <p className="text-gray-300 leading-relaxed text-lg">
-                Começei minha jornada na programação aos 16 anos e desde então venho me apaixonando 
-                cada vez mais pelo mundo do desenvolvimento. Sempre busco aprender novas tecnologias 
-                e me manter atualizado com as tendências do mercado.
+                Sempre tive interesse por tecnologia e design. Comecei minha carreira com 17 anos dentro da minha atual graduação em Desenvolvimento de Software Multiplataforma, e desde entao venho aprimorando meus conhecimentos em diversas tecnologias principalmente em React, e tambem fazendo diversos projetos que auxiliam pessoas no seu cotidiano. 
               </p>
               
               <motion.div
@@ -194,8 +192,7 @@ export function About() {
               </h3>
               <p className="text-gray-300 leading-relaxed text-lg">
                 Acredito que código limpo e design intuitivo são fundamentais para criar experiências 
-                excepcionais. Cada projeto é uma oportunidade de inovar e superar expectativas, 
-                sempre pensando no usuário final.
+                excepcionais. Sempre levo em conta a organizacao e boas praticas de desenvolvimento para que meus clientes e desenvolvedores interessados possam compreender e utilizar. 
               </p>
               
               <motion.div
@@ -233,7 +230,8 @@ export function About() {
           </h3>
           
           <div className="flex flex-wrap justify-center gap-4">
-            {['React', 'TypeScript', 'Node.js', 'JavaScript', 'PostgreSQL', 'Docker', 'CSS/HTML', 'Figma'].map((tech, index) => (
+            {['React', 'TypeScript', 'Node.js', 'JavaScript', 'TailwindCSS','Express', 'CSS/HTML',
+            'Java', 'MongoDB','MySQL','Figma'].map((tech, index) => (
               <motion.span
                 key={tech}
                 initial={{ opacity: 0, scale: 0.8, y: 20 }}
