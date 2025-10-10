@@ -12,7 +12,7 @@ export function Footer() {
           viewport={{ once: true }}
           className="text-center space-y-6"
         >
-          {/* Logo and tagline */}
+          
           <div className="flex items-center justify-center gap-3 mb-8">
             <div className="relative">
               <div className="bg-gradient-to-r from-pink-500 to-orange-500 w-12 h-12 rounded-2xl flex items-center justify-center relative overflow-hidden">
@@ -53,7 +53,7 @@ export function Footer() {
               ease: "linear"
             }}
           >
-            "Código é poesia, design é arte, e juntos criam experiências extraordinárias."
+           
           </motion.p>
 
           {/* Made with love */}
@@ -80,11 +80,9 @@ export function Footer() {
             whileHover={{ scale: 1.02 }}
           >
             <p className="text-gray-500">
-              © 2024 DevPortfolio. Todos os direitos reservados.
+              © 2025 Nanda. Todos os direitos reservados.
             </p>
-            <p className="text-gray-600 mt-2">
-              Desenvolvido com React, TypeScript e muita criatividade.
-            </p>
+
           </motion.div>
 
           {/* Decorative elements */}

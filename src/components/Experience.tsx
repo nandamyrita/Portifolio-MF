@@ -24,31 +24,31 @@ export function Experience() {
       "Aprendi metodologias ágeis e trabalho colaborativo em equipe",
       "Desenvolvi aplicações com foco em usabilidade e experiência do usuário",
     ],
-    tech: ["React", "Node.js", "TypeScript", "Firebase", "Git"],
+    tech: ["React", "Node.js", "TypeScript", "Firebase", "Git", "etc..."],
     highlight: true,
   },
   {
-    title: "Desenvolvedora Web Freelancer",
+    title: "EstocaAi - Gerenciamento de Adega",
     company: "Adega Local",
-    period: "2024",
+    period: "2025",
     location: "São Paulo, SP",
     description:
-      "Desenvolvi um sistema simples de controle de estoque personalizado para uma adega, permitindo cadastrar, atualizar e acompanhar produtos em tempo real.",
+      "Desenvolvi um sistema simples de controle de estoque personalizado para uma adega, permitindo cadastrar, atualizar e acompanhar produtos em tempo real, e um dashboard com graficos interativos.",
     achievements: [
       "Criei interface intuitiva para registro e atualização de produtos",
       "Implementei alertas automáticos para produtos com estoque baixo",
       "Organizei banco de dados para fácil manutenção e escalabilidade",
     ],
-    tech: ["React", "Node.js", "MongoDB", "Tailwind CSS"],
+    tech: ["React", "Node.js", "Firebase", "CSS"],
     highlight: false,
   },
   {
-    title: "Desenvolvedora Frontend",
+    title: "Sistema de Agendamento ",
     company: "Patty Nails",
     period: "2024",
     location: "São Paulo, SP",
     description:
-      "Desenvolvi uma landing page moderna e responsiva para um salão de beleza, destacando serviços, portfólio e canais de contato.",
+      "Desenvolvi uma landing page moderna e responsiva para um salão de beleza, destacando serviços, portfólio e canais de contato, e formulario de agendamento com acesso a area de administrador e controle de cancelamento e horarios.",
     achievements: [
       "Criei layout atraente com foco em identidade visual e experiência do usuário",
       "Implementei formulário de agendamento integrado ao e-mail do salão",
