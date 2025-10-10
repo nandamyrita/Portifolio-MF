@@ -9,14 +9,14 @@ export function Contact() {
     {
       icon: Mail,
       label: 'Email',
-      value: 'contato@seudominio.com',
-      href: 'mailto:contato@seudominio.com'
+      value: 'mariafernanda.mfsm8@gmail.com',
+      href: 'mailto:mariafernanda.mfsm8@gmail.com'
     },
     {
       icon: Phone,
       label: 'Telefone',
-      value: '+55 (11) 99999-9999',
-      href: 'tel:+5511999999999'
+      value: '+55 (11)95163-1729',
+      href: 'tel:+5511951631729'
     },
     {
       icon: MapPin,
@@ -27,9 +27,9 @@ export function Contact() {
   ]
 
   const socialLinks = [
-    { icon: Github, href: '#', label: 'GitHub' },
-    { icon: Linkedin, href: '#', label: 'LinkedIn' },
-    { icon: Twitter, href: '#', label: 'Twitter' }
+    { icon: Github, href: 'https://github.com/nandamyrita', label: 'GitHub' },
+    { icon: Linkedin, href: 'https://www.linkedin.com/in/maria-fernanda-439137202/', label: 'LinkedIn' },
+    
   ]
 
   return (
@@ -160,24 +160,7 @@ export function Contact() {
         </div>
 
         {/* Call to action */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center mt-16 p-8 bg-gradient-to-r from-pink-500/10 to-orange-500/10 backdrop-blur border border-pink-500/30 rounded-2xl"
-        >
-          <h3 className="text-2xl font-bold text-pink-400 mb-4">Pronto para o próximo projeto?</h3>
-          <p className="text-gray-300 mb-6">
-            Vamos transformar suas ideias em realidade digital. Entre em contato e vamos começar!
-          </p>
-          <Button
-            size="lg"
-            className="bg-gradient-to-r from-pink-500 to-orange-500 hover:from-pink-600 hover:to-orange-600 border-0 text-white px-8 py-6 text-lg rounded-xl transition-all duration-300 hover:scale-105"
-          >
-            Iniciar Projeto
-          </Button>
-        </motion.div>
+
       </div>
     </section>
   )

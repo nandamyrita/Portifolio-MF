@@ -27,6 +27,23 @@ export function Experience() {
     tech: ["React", "Node.js", "TypeScript", "Firebase", "Git", "etc..."],
     highlight: true,
   },
+
+   {
+    title: "Sistema de Divulgação de Buffet",
+    company: "Simone Buffet",
+    period: "2025",
+    location: "São Paulo, SP",
+    description:
+      "Desenvolvi uma landing page com informações dos serviços disponibilizados pela Simone, como Buffet e outros serviços no ramo do alimento, com integração ao WhatsApp.",
+    achievements: [
+      "Layout organizado com informações essenciais sobre a Simone",
+      "Forms para que os clientes possam informar as seus desejos, que formata para envio direto ao Whatsapp da empreendedora",
+      "Area de Administrador, para edição das informações na landing page",
+    ],
+    tech: ["React", "Vite", "Firebase", "TailwindCSS"],
+    highlight: false,
+  },
+
   {
     title: "EstocaAi - Gerenciamento de Adega",
     company: "Adega Local",
@@ -54,9 +71,11 @@ export function Experience() {
       "Implementei formulário de agendamento integrado ao e-mail do salão",
       "Aumentei a presença digital do negócio e facilitei a captação de clientes",
     ],
-    tech: ["HTML", "CSS", "JavaScript", "Tailwind CSS"],
+    tech: ["HTML", "CSS", "JavaScript", "TailwindCSS"],
     highlight: false,
   },
+
+ 
 ];
 
   return (
@@ -70,7 +89,7 @@ export function Experience() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-pink-400 to-orange-500 bg-clip-text text-transparent">
-            Experiência Profissional
+            Minha Tragetoria
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Minha jornada de crescimento no mundo da tecnologia
@@ -250,7 +269,7 @@ export function Experience() {
           </div>
         </div>
 
-        {/* Call to action */}
+        
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
