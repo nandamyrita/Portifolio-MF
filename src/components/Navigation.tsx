@@ -32,7 +32,7 @@ export function Navigation() {
             <div className="flex items-center gap-2 bg-gray-800/20 backdrop-blur border border-pink-500/20 rounded-full p-2">
               <img
                 className="w-14 p-2 mr-7"
-                src="src/images/logo.png"
+                src="/logo.png"
                 alt="logo"
               />
 

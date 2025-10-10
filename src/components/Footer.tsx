@@ -14,31 +14,11 @@ export function Footer() {
         >
           
           <div className="flex items-center justify-center gap-3 mb-8">
-            <div className="relative">
-              <div className="bg-gradient-to-r from-pink-500 to-orange-500 w-12 h-12 rounded-2xl flex items-center justify-center relative overflow-hidden">
-                <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-pink-400 to-orange-400 opacity-0"
-                  whileHover={{ opacity: 0.3 }}
-                  transition={{ duration: 0.3 }}
-                />
-                <span className="text-white font-bold text-lg z-10">MF</span>
-              </div>
-              <motion.div
-                className="absolute -top-1 -right-1 w-3 h-3 bg-pink-400 rounded-full"
-                animate={{ 
-                  scale: [1, 1.2, 1],
-                  opacity: [0.7, 1, 0.7]
-                }}
-                transition={{ 
-                  duration: 2,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
+            <img
+                className="w-20 p-2 mr-7"
+                src="/logo.png"
+                alt="logo"
               />
-            </div>
-            <span className="text-2xl font-bold bg-gradient-to-r from-pink-400 to-orange-500 bg-clip-text text-transparent">
-              Maria Fernanda
-            </span>
           </div>
 
           {/* Quote */}
@@ -56,7 +36,7 @@ export function Footer() {
            
           </motion.p>
 
-          {/* Made with love */}
+          
           <div className="flex items-center justify-center gap-2 text-gray-400">
             <span>Feito com</span>
             <motion.div
