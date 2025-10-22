@@ -10,73 +10,66 @@ import {
 
 export function Skills() {
   const skillCategories = [
-    {
-      icon: Code2,
-      title: "Frontend",
-      skills: [
-        { name: "React/Next.js", level: 95 },
-        { name: "TypeScript", level: 90 },
-        { name: "Tailwind CSS", level: 85 },
-        { name: "Motion/Framer", level: 80 },
-      ],
-      gradient: "from-pink-500 to-rose-500",
-    },
-    {
-      icon: Server,
-      title: "Backend",
-      skills: [
-        { name: "Node.js", level: 90 },
-        { name: "Python", level: 85 },
-        { name: "API REST", level: 95 },
-        { name: "GraphQL", level: 75 },
-      ],
-      gradient: "from-orange-500 to-indigo-500",
-    },
-    {
-      icon: Database,
-      title: "Database",
-      skills: [
-        { name: "PostgreSQL", level: 85 },
-        { name: "MongoDB", level: 80 },
-        { name: "Redis", level: 75 },
-        { name: "Firebase", level: 70 },
-      ],
-      gradient: "from-cyan-500 to-blue-500",
-    },
-    {
-      icon: Globe,
-      title: "DevOps",
-      skills: [
-        { name: "Docker", level: 80 },
-        { name: "AWS", level: 75 },
-        { name: "CI/CD", level: 85 },
-        { name: "Linux", level: 70 },
-      ],
-      gradient: "from-emerald-500 to-teal-500",
-    },
-    {
-      icon: Smartphone,
-      title: "Mobile",
-      skills: [
-        { name: "React Native", level: 85 },
-        { name: "Flutter", level: 70 },
-        { name: "PWA", level: 90 },
-        { name: "App Store", level: 75 },
-      ],
-      gradient: "from-orange-500 to-red-500",
-    },
-    {
-      icon: Palette,
-      title: "Design",
-      skills: [
-        { name: "Figma", level: 85 },
-        { name: "UI/UX", level: 80 },
-        { name: "Adobe Suite", level: 70 },
-        { name: "Prototyping", level: 85 },
-      ],
-      gradient: "from-violet-500 to-orange-500",
-    },
-  ];
+  {
+    icon: Code2,
+    title: "Frontend",
+    skills: [
+      { name: "React/Next.js", level: 95 },
+      { name: "TypeScript", level: 90 },
+      { name: "Tailwind CSS", level: 85 },
+      { name: "Motion/Framer", level: 80 },
+    ],
+    gradient: "from-pink-500 to-rose-500",
+  },
+  {
+    icon: Server,
+    title: "Backend",
+    skills: [
+      { name: "Node.js", level: 90 },
+      { name: "Python", level: 85 },
+      { name: "API REST", level: 95 },
+    ],
+    gradient: "from-orange-500 to-indigo-500",
+  },
+  {
+    icon: Database,
+    title: "Database",
+    skills: [
+      { name: "MongoDB", level: 80 },
+      { name: "Firebase", level: 70 },
+    ],
+    gradient: "from-cyan-500 to-blue-500",
+  },
+  {
+    icon: Globe,
+    title: "Dados",
+    skills: [
+      { name: "Pandas", level: 40 },
+      { name: "NumPy", level: 40 },
+      { name: "Power BI", level: 30 },
+      { name: "Matplotlib/Seaborn", level: 40 },
+      { name: "Jupyter Notebook", level: 60 },
+    ],
+    gradient: "from-emerald-500 to-teal-500",
+  },
+  {
+    icon: Smartphone,
+    title: "Mobile",
+    skills: [
+      { name: "React Native", level: 20 },
+    ],
+    gradient: "from-orange-500 to-red-500",
+  },
+  {
+    icon: Palette,
+    title: "Design",
+    skills: [
+      { name: "Figma", level: 85 },
+      { name: "UI/UX", level: 80 },
+    ],
+    gradient: "from-violet-500 to-orange-500",
+  },
+];
 
   return (
     <section className="py-20 px-6 relative overflow-hidden">
@@ -160,11 +153,8 @@ export function Skills() {
             {[
               "Metodologias Ágeis",
               "Clean Code",
-              "TDD/BDD",
-              "Microservices",
               "Git/GitHub",
               "Code Review",
-              "Mentoring",
               "Technical Writing",
             ].map((skill, index) => (
               <motion.span

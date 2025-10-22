@@ -1,4 +1,6 @@
 import { motion } from 'motion/react'
+import { FaReact, FaNodeJs, FaJava, FaPython, FaBrain } from 'react-icons/fa'
+import { SiTypescript, SiJavascript, SiTailwindcss, SiExpress, SiMongodb, SiMysql, SiFigma, SiCss3, SiHtml5 } from 'react-icons/si'
 import { Code, Zap, Users, Trophy, Sparkles, Star, Heart } from 'lucide-react'
 
 
@@ -9,6 +11,23 @@ export function About() {
     { icon: Users, label: 'Clientes Satisfeitos', value: '30+' },
     { icon: Trophy, label: 'Prêmios', value: '10+' },
   ]
+
+  const techList = [
+  { name: 'React', icon: <FaReact className="inline-block mr-2 text-pink-400" /> },
+  { name: 'TypeScript', icon: <SiTypescript className="inline-block mr-2 text-blue-500" /> },
+  { name: 'Node.js', icon: <FaNodeJs className="inline-block mr-2 text-green-600" /> },
+  { name: 'JavaScript', icon: <SiJavascript className="inline-block mr-2 text-yellow-400" /> },
+  { name: 'TailwindCSS', icon: <SiTailwindcss className="inline-block mr-2 text-cyan-400" /> },
+  { name: 'Express', icon: <SiExpress className="inline-block mr-2 text-gray-500" /> },
+  { name: 'CSS/HTML', icon: <><SiCss3 className="inline-block mr-1 text-blue-600" /><SiHtml5 className="inline-block mr-2 text-orange-600" /></> },
+  { name: 'Java', icon: <FaJava className="inline-block mr-2 text-red-600" /> },
+  { name: 'MongoDB', icon: <SiMongodb className="inline-block mr-2 text-green-700" /> },
+  { name: 'MySQL', icon: <SiMysql className="inline-block mr-2 text-blue-700" /> },
+  { name: 'Figma', icon: <SiFigma className="inline-block mr-2 text-pink-600" /> },
+  { name: 'Python', icon: <FaPython className="inline-block mr-2 text-blue-500" /> },
+  { name: 'Machine Learning', icon: <FaBrain className="inline-block mr-2 text-purple-600" /> }
+]
+
 
   return (
     <section className="py-20 px-6 relative overflow-hidden">
@@ -230,40 +249,41 @@ export function About() {
           </h3>
           
           <div className="flex flex-wrap justify-center gap-4">
-            {['React', 'TypeScript', 'Node.js', 'JavaScript', 'TailwindCSS','Express', 'CSS/HTML',
-            'Java', 'MongoDB','MySQL','Figma'].map((tech, index) => (
-              <motion.span
-                key={tech}
-                initial={{ opacity: 0, scale: 0.8, y: 20 }}
-                whileInView={{ opacity: 1, scale: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                whileHover={{ 
-                  scale: 1.15, 
-                  y: -8,
-                  rotate: [0, 5, -5, 0],
-                  boxShadow: "0 10px 30px rgba(255, 0, 110, 0.3)"
-                }}
-                className="px-8 py-4 bg-gradient-to-r from-pink-500/20 to-orange-500/20 backdrop-blur border border-pink-500/30 rounded-2xl text-pink-300 hover:border-pink-500/70 hover:text-white transition-all duration-500 relative overflow-hidden group cursor-pointer"
-              >
-                {/* Animated background on hover */}
-                <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-pink-500/30 to-orange-500/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                  initial={false}
-                />
-                
-                {/* Shimmer effect */}
-                <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100"
-                  initial={{ x: '-100%' }}
-                  whileHover={{ x: '100%' }}
-                  transition={{ duration: 0.6 }}
-                />
-                
-                <span className="relative z-10 font-bold">{tech}</span>
-              </motion.span>
-            ))}
-          </div>
+  {techList.map(({ name, icon }, index) => (
+    <motion.span
+      key={name}
+      initial={{ opacity: 0, scale: 0.8, y: 20 }}
+      whileInView={{ opacity: 1, scale: 1, y: 0 }}
+      transition={{ duration: 0.6, delay: index * 0.1 }}
+      viewport={{ once: true }}
+      whileHover={{ 
+        scale: 1.15, 
+        y: -8,
+        rotate: [0, 5, -5, 0],
+        boxShadow: "0 10px 30px rgba(255, 0, 110, 0.3)"
+      }}
+      className="px-8 py-4 bg-gradient-to-r from-pink-500/20 to-orange-500/20 backdrop-blur border border-pink-500/30 rounded-2xl text-pink-300 hover:border-pink-500/70 hover:text-white transition-all duration-500 relative overflow-hidden group cursor-pointer flex items-center"
+    >
+      {/* Animated background on hover */}
+      <motion.div
+        className="absolute inset-0 bg-gradient-to-r from-pink-500/30 to-orange-500/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+        initial={false}
+      />
+      
+      {/* Shimmer effect */}
+      <motion.div
+        className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100"
+        initial={{ x: '-100%' }}
+        whileHover={{ x: '100%' }}
+        transition={{ duration: 0.6 }}
+      />
+      
+      <span className="relative z-10 font-bold flex items-center">
+        {icon} {name}
+      </span>
+    </motion.span>
+  ))}
+</div>
         </motion.div>
       </div>
     </section>

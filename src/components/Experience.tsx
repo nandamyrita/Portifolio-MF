@@ -11,72 +11,72 @@ export function Experience() {
 
   const lineHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
- const experiences = [
-  {
-    title: "Tecnóloga em Desenvolvimento de Software Multiplataforma",
-    company: "FATEC Zona Leste",
-    period: "2024 - Presente",
-    location: "São Paulo, SP",
-    description:
-      "Cursando graduação focada em desenvolvimento full stack, com ênfase em criação de aplicações web, arquitetura de sistemas e boas práticas de programação.",
-    achievements: [
-      "Participei de diversos projetos acadêmicos utilizando React, Node.js e Firebase",
-      "Aprendi metodologias ágeis e trabalho colaborativo em equipe",
-      "Desenvolvi aplicações com foco em usabilidade e experiência do usuário",
-    ],
-    tech: ["React", "Node.js", "TypeScript", "Firebase", "Git", "etc..."],
-    highlight: true,
-  },
+  const experiences = [
+    {
+      title: "Tecnóloga em Desenvolvimento de Software Multiplataforma",
+      company: "FATEC Zona Leste",
+      period: "2024 - Presente",
+      location: "São Paulo, SP",
+      description:
+        "Cursando graduação focada em desenvolvimento full stack, com ênfase em criação de aplicações web, arquitetura de sistemas e boas práticas de programação.",
+      achievements: [
+        "Participei de diversos projetos acadêmicos utilizando React, Node.js e Firebase",
+        "Aprendi metodologias ágeis e trabalho colaborativo em equipe",
+        "Desenvolvi aplicações com foco em usabilidade e experiência do usuário",
+      ],
+      tech: ["React", "Node.js", "TypeScript", "Firebase", "Git", "etc..."],
+      highlight: true,
+    },
 
-   {
-    title: "Sistema de Divulgação de Buffet",
-    company: "Simone Buffet",
-    period: "2025",
-    location: "São Paulo, SP",
-    description:
-      "Desenvolvi uma landing page com informações dos serviços disponibilizados pela Simone, como Buffet e outros serviços no ramo do alimento, com integração ao WhatsApp.",
-    achievements: [
-      "Layout organizado com informações essenciais sobre a Simone",
-      "Forms para que os clientes possam informar as seus desejos, que formata para envio direto ao Whatsapp da empreendedora",
-      "Area de Administrador, para edição das informações na landing page",
-    ],
-    tech: ["React", "Vite", "Firebase", "TailwindCSS"],
-    highlight: false,
-  },
+    {
+      title: "Sistema de Divulgação de Buffet",
+      company: "Simone Buffet",
+      period: "2025",
+      location: "São Paulo, SP",
+      description:
+        "Desenvolvi uma landing page com informações dos serviços disponibilizados pela Simone, como Buffet e outros serviços no ramo do alimento, com integração ao WhatsApp.",
+      achievements: [
+        "Layout organizado com informações essenciais sobre a Simone",
+        "Forms para que os clientes possam informar as seus desejos, que formata para envio direto ao Whatsapp da empreendedora",
+        "Area de Administrador, para edição das informações na landing page",
+      ],
+      tech: ["React", "Vite", "Firebase", "TailwindCSS"],
+      highlight: false,
+    },
 
-  {
-    title: "EstocaAi - Gerenciamento de Adega",
-    company: "Adega Local",
-    period: "2025",
-    location: "São Paulo, SP",
-    description:
-      "Desenvolvi um sistema simples de controle de estoque personalizado para uma adega, permitindo cadastrar, atualizar e acompanhar produtos em tempo real, e um dashboard com graficos interativos.",
-    achievements: [
-      "Criei interface intuitiva para registro e atualização de produtos",
-      "Implementei alertas automáticos para produtos com estoque baixo",
-      "Organizei banco de dados para fácil manutenção e escalabilidade",
-    ],
-    tech: ["React", "Node.js", "Firebase", "CSS"],
-    highlight: false,
-  },
-  {
-    title: "Sistema de Agendamento ",
-    company: "Patty Nails",
-    period: "2024",
-    location: "São Paulo, SP",
-    description:
-      "Desenvolvi uma landing page moderna e responsiva para um salão de beleza, destacando serviços, portfólio e canais de contato, e formulario de agendamento com acesso a area de administrador e controle de cancelamento e horarios.",
-    achievements: [
-      "Criei layout atraente com foco em identidade visual e experiência do usuário",
-      "Implementei formulário de agendamento integrado ao e-mail do salão",
-      "Aumentei a presença digital do negócio e facilitei a captação de clientes",
-    ],
-    tech: ["HTML", "CSS", "JavaScript", "TailwindCSS"],
-    highlight: false,
-  },
+    {
+      title: "EstocaAi - Gerenciamento de Adega",
+      company: "Adega Local",
+      period: "2025",
+      location: "São Paulo, SP",
+      description:
+        "Desenvolvi um sistema simples de controle de estoque personalizado para uma adega, permitindo cadastrar, atualizar e acompanhar produtos em tempo real, e um dashboard com graficos interativos.",
+      achievements: [
+        "Criei interface intuitiva para registro e atualização de produtos",
+        "Implementei alertas automáticos para produtos com estoque baixo",
+        "Organizei banco de dados para fácil manutenção e escalabilidade",
+      ],
+      tech: ["React", "Node.js", "Firebase", "CSS"],
+      highlight: false,
+    },
+    {
+      title: "Sistema de Agendamento ",
+      company: "Patty Nails",
+      period: "2024",
+      location: "São Paulo, SP",
+      description:
+        "Desenvolvi uma landing page moderna e responsiva para um salão de beleza, destacando serviços, portfólio e canais de contato, e formulario de agendamento com acesso a area de administrador e controle de cancelamento e horarios.",
+      achievements: [
+        "Criei layout atraente com foco em identidade visual e experiência do usuário",
+        "Implementei formulário de agendamento integrado ao e-mail do salão",
+        "Aumentei a presença digital do negócio e facilitei a captação de clientes",
+      ],
+      tech: ["HTML", "CSS", "JavaScript", "TailwindCSS"],
+      highlight: false,
+    },
 
- 
-];
+
+  ];
 
   return (
     <section ref={containerRef} className="py-20 px-6 relative overflow-hidden">
@@ -113,24 +113,22 @@ export function Experience() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.2 }}
                 viewport={{ once: true }}
-                className={`relative flex items-center ${
-                  index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-                }`}
+                className={`relative flex items-center ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+                  }`}
               >
                 {/* Timeline dot */}
                 <motion.div
-                  className={`absolute left-8 md:left-1/2 transform md:-translate-x-1/2 w-6 h-6 rounded-full border-4 border-black z-10 ${
-                    exp.highlight ? "bg-pink-500" : "bg-orange-500"
-                  }`}
+                  className={`absolute left-8 md:left-1/2 transform md:-translate-x-1/2 w-6 h-6 rounded-full border-4 border-black z-10 ${exp.highlight ? "bg-pink-500" : "bg-orange-500"
+                    }`}
                   whileHover={{ scale: 1.3 }}
                   animate={
                     exp.highlight
                       ? {
-                          boxShadow: [
-                            "0 0 0 0px rgba(255, 0, 110, 0.4)",
-                            "0 0 0 10px rgba(255, 0, 110, 0)",
-                          ],
-                        }
+                        boxShadow: [
+                          "0 0 0 0px rgba(255, 0, 110, 0.4)",
+                          "0 0 0 10px rgba(255, 0, 110, 0)",
+                        ],
+                      }
                       : {}
                   }
                   transition={{ duration: 2, repeat: Infinity }}
@@ -142,37 +140,24 @@ export function Experience() {
 
                 {/* Content card */}
                 <motion.div
-                  className={`ml-20 md:ml-0 w-full md:w-5/12 ${
-                    index % 2 === 0
+                  className={`ml-20 md:ml-0 w-full md:w-5/12 ${index % 2 === 0
                       ? "md:mr-auto md:pr-8"
                       : "md:ml-auto md:pl-8"
-                  }`}
+                    }`}
                   whileHover={{ scale: 1.02, y: -5 }}
                   transition={{ duration: 0.3 }}
                 >
                   <div
-                    className={`bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur border rounded-2xl p-8 relative overflow-hidden group ${
-                      exp.highlight
+                    className={`bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur border rounded-2xl p-8 relative overflow-hidden group ${exp.highlight
                         ? "border-pink-500/40"
                         : "border-orange-500/20"
-                    } hover:border-pink-400/60 transition-all duration-500`}
+                      } hover:border-pink-400/60 transition-all duration-500`}
                   >
                     {/* Animated background on hover */}
                     <motion.div
                       className="absolute inset-0 bg-gradient-to-br from-pink-500/5 to-orange-500/50/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                       initial={false}
                     />
-
-                    {/* Highlight badge */}
-                    {exp.highlight && (
-                      <motion.div
-                        className="absolute -top-2 -right-2 bg-gradient-to-r from-pink-500 to-orange-500/50 px-3 py-1 rounded-lg text-xs text-white font-bold"
-                        animate={{ rotate: [0, 5, -5, 0] }}
-                        transition={{ duration: 4, repeat: Infinity }}
-                      >
-                        Atual
-                      </motion.div>
-                    )}
 
                     <div className="relative z-10">
                       <div className="flex items-start justify-between mb-4">
@@ -269,7 +254,7 @@ export function Experience() {
           </div>
         </div>
 
-        
+
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
