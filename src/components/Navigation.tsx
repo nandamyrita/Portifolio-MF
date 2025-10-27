@@ -30,11 +30,7 @@ export function Navigation() {
 
             {/* Navigation Pills */}
             <div className="flex items-center gap-2 bg-gray-800/20 backdrop-blur border border-pink-500/20 rounded-full p-2">
-              <img
-                className="w-14 p-2 mr-7"
-                src="/logo.png"
-                alt="logo"
-              />
+              <img className="w-14 p-2 mr-7" src="/logo.png" alt="logo" />
 
               {navItems.map((item, index) => (
                 <motion.a
@@ -63,13 +59,14 @@ export function Navigation() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <Button
-                  size="sm"
-                  className="bg-gradient-to-r from-pink-500 to-orange-500 hover:from-pink-600 hover:to-orange-400 border-0 text-white px-2 py-5 rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-pink-500/25 group ml-6"
-                >
-                  <Download className="h-4 w-4 mr-2 group-hover:animate-bounce" />
-                  Currículo
-                </Button>
+                <a
+                href="/CurriculoEstagio.pdf"
+                download="CurriculoEstagio.pdf"
+                className="bg-gradient-to-r from-pink-500 to-orange-500 hover:from-pink-600 hover:to-orange-400 border-0 text-white px-2 py-5 rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-pink-500/25 group ml-6 justify-center flex items-center "
+              >
+                <Download className="h-4 w-4 mr-2" />
+                Currículo
+              </a>
               </motion.div>
             </div>
           </div>
@@ -106,13 +103,14 @@ export function Navigation() {
               transition={{ duration: 0.3 }}
               className="mb-4"
             >
-              <Button
-                size="sm"
-                className="w-full bg-gradient-to-r from-pink-500 to-black-500 hover:from-pink-600 hover:to-black-600 border-0 text-white px-4 py-2 rounded-full transition-all duration-300"
+              <a
+                href="/CurriculoEstagio.pdf"
+                download="CurriculoEstagio.pdf"
+                className="bg-gradient-to-r from-pink-500 to-orange-500 hover:from-pink-600 hover:to-orange-400 border-0 text-white px-2 py-5 rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-pink-500/25 group ml-6 justify-center flex items-center "
               >
                 <Download className="h-4 w-4 mr-2" />
                 Download Currículo
-              </Button>
+              </a>
             </motion.div>
 
             {navItems.map((item, index) => (

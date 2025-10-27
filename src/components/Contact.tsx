@@ -1,40 +1,66 @@
-import { motion } from 'motion/react'
-import { Mail, Phone, MapPin, Send, Github, Linkedin, Twitter } from 'lucide-react'
-import { Button } from './ui/button'
-import { Input } from './ui/input'
-import { Textarea } from './ui/textarea'
+import { useState } from "react";
+import { motion } from "motion/react";
+import { Mail, Phone, MapPin, Send, Github, Linkedin } from "lucide-react";
+import { Button } from "./ui/button";
+import { Input } from "./ui/input";
+import { Textarea } from "./ui/textarea";
 
 export function Contact() {
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const message = `Olá! 👋\n\nNome: ${form.name}\nEmail: ${form.email}\nAssunto: ${form.subject}\nMensagem: ${form.message}`;
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappUrl = `https://wa.me/5511951631729?text=${encodedMessage}`;
+    window.open(whatsappUrl, "_blank");
+  };
+
   const contactInfo = [
     {
       icon: Mail,
-      label: 'Email',
-      value: 'mariafernanda.mfsm8@gmail.com',
-      href: 'mailto:mariafernanda.mfsm8@gmail.com'
+      label: "Email",
+      value: "mariafernanda.mfsm8@gmail.com",
+      href: "mailto:mariafernanda.mfsm8@gmail.com",
     },
     {
       icon: Phone,
-      label: 'Telefone',
-      value: '+55 (11)95163-1729',
-      href: 'tel:+5511951631729'
+      label: "Telefone",
+      value: "+55 (11)95163-1729",
+      href: "tel:+5511951631729",
     },
     {
       icon: MapPin,
-      label: 'Localização',
-      value: 'São Paulo, Brasil',
-      href: '#'
-    }
-  ]
+      label: "Localização",
+      value: "São Paulo, Brasil",
+      href: "#",
+    },
+  ];
 
   const socialLinks = [
-    { icon: Github, href: 'https://github.com/nandamyrita', label: 'GitHub' },
-    { icon: Linkedin, href: 'https://www.linkedin.com/in/maria-fernanda-439137202/', label: 'LinkedIn' },
-    
-  ]
+    { icon: Github, href: "https://github.com/nandamyrita", label: "GitHub" },
+    {
+      icon: Linkedin,
+      href: "https://www.linkedin.com/in/maria-fernanda-439137202/",
+      label: "LinkedIn",
+    },
+  ];
 
   return (
     <section className="py-20 px-6 relative overflow-hidden">
       <div className="max-w-6xl mx-auto">
+        {/* Cabeçalho */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -46,12 +72,13 @@ export function Contact() {
             Vamos Conversar?
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Tenho uma ideia incrível ou quer colaborar em um projeto? Entre em contato!
+            Tenho uma ideia incrível ou quer colaborar em um projeto? Entre em
+            contato!
           </p>
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Contact information */}
+          {/* Informações de contato */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -60,7 +87,9 @@ export function Contact() {
             className="space-y-8"
           >
             <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur border border-pink-500/20 rounded-2xl p-8">
-              <h3 className="text-2xl font-bold text-pink-400 mb-6">Informações de Contato</h3>
+              <h3 className="text-2xl font-bold text-pink-400 mb-6">
+                Informações de Contato
+              </h3>
               <div className="space-y-6">
                 {contactInfo.map((info, index) => (
                   <motion.a
@@ -81,9 +110,11 @@ export function Contact() {
               </div>
             </div>
 
-            {/* Social links */}
+            {/* Redes sociais */}
             <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur border border-pink-500/20 rounded-2xl p-8">
-              <h3 className="text-2xl font-bold text-pink-400 mb-6">Redes Sociais</h3>
+              <h3 className="text-2xl font-bold text-pink-400 mb-6">
+                Redes Sociais
+              </h3>
               <div className="flex gap-4">
                 {socialLinks.map((social, index) => (
                   <motion.a
@@ -100,29 +131,40 @@ export function Contact() {
             </div>
           </motion.div>
 
-          {/* Contact form */}
+          {/* Formulário de contato */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <form className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur border border-pink-500/20 rounded-2xl p-8 space-y-6">
-              <h3 className="text-2xl font-bold text-pink-400 mb-6">Envie uma Mensagem</h3>
-              
+            <form
+              onSubmit={handleSubmit}
+              className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur border border-pink-500/20 rounded-2xl p-8 space-y-6"
+            >
+              <h3 className="text-2xl font-bold text-pink-400 mb-6">
+                Envie uma Mensagem
+              </h3>
+
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <label className="text-gray-300">Nome</label>
-                  <Input 
+                  <Input
+                    name="name"
                     placeholder="Seu nome"
+                    value={form.name}
+                    onChange={handleChange}
                     className="bg-gray-800/50 border-pink-500/30 focus:border-pink-400 text-white placeholder:text-gray-500"
                   />
                 </div>
                 <div className="space-y-2">
                   <label className="text-gray-300">Email</label>
-                  <Input 
+                  <Input
+                    name="email"
                     type="email"
                     placeholder="seu@email.com"
+                    value={form.email}
+                    onChange={handleChange}
                     className="bg-gray-800/50 border-pink-500/30 focus:border-pink-400 text-white placeholder:text-gray-500"
                   />
                 </div>
@@ -130,22 +172,31 @@ export function Contact() {
 
               <div className="space-y-2">
                 <label className="text-gray-300">Assunto</label>
-                <Input 
+                <Input
+                  name="subject"
                   placeholder="Assunto da mensagem"
+                  value={form.subject}
+                  onChange={handleChange}
                   className="bg-gray-800/50 border-pink-500/30 focus:border-pink-400 text-white placeholder:text-gray-500"
                 />
               </div>
 
               <div className="space-y-2">
                 <label className="text-gray-300">Mensagem</label>
-                <Textarea 
+                <Textarea
+                  name="message"
                   placeholder="Descreva sua ideia ou projeto..."
                   rows={6}
+                  value={form.message}
+                  onChange={handleChange}
                   className="bg-gray-800/50 border-pink-500/30 focus:border-pink-400 text-white placeholder:text-gray-500 resize-none"
                 />
               </div>
 
-              <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+              <motion.div
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+              >
                 <Button
                   type="submit"
                   size="lg"
@@ -158,10 +209,7 @@ export function Contact() {
             </form>
           </motion.div>
         </div>
-
-        {/* Call to action */}
-
       </div>
     </section>
-  )
+  );
 }
