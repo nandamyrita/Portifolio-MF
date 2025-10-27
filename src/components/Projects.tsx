@@ -1,117 +1,160 @@
-import { motion, AnimatePresence } from 'motion/react'
-import { ExternalLink, Github, Sparkles, Code2, Smartphone, Globe, Brain, Layers, Zap } from 'lucide-react'
-import { Button } from './ui/button'
-import { useState } from 'react'
+import { motion, AnimatePresence } from "motion/react";
+import {
+  ExternalLink,
+  Github,
+  Sparkles,
+  Code2,
+  Smartphone,
+  Globe,
+  Brain,
+  Layers,
+  Zap,
+} from "lucide-react";
+import { Button } from "./ui/button";
+import { useState } from "react";
 
-type Category = 'Todos' | 'Web' | 'Front-End' | 'SaaS' | 'AI/ML' | 'Dashboard'
+type Category = "Todos" | "Web" | "Front-End" | "SaaS" | "AI/ML" | "Dashboard";
 
 interface Project {
-  title: string
-  description: string
-  image: string
-  tech: string[]
-  gradient: string
-  category: Category
-  featured?: boolean
-  github?: string
-  live?: string
+  title: string;
+  description: string;
+  image: string;
+  tech: string[];
+  gradient: string;
+  category: Category;
+  featured?: boolean;
+  github?: string;
+  live?: string;
 }
 
 export function Projects() {
-  const [selectedCategory, setSelectedCategory] = useState<Category>('Todos')
-  const [showAll, setShowAll] = useState(false)
+  const [selectedCategory, setSelectedCategory] = useState<Category>("Todos");
+  const [showAll, setShowAll] = useState(false);
 
   const categories = [
-    { name: 'Todos' as Category, icon: Layers },
-    { name: 'Web' as Category, icon: Globe },
-    { name: 'Front-End' as Category, icon: Smartphone },
-    { name: 'SaaS' as Category, icon: Zap },
-    { name: 'AI/ML' as Category, icon: Brain },
-    { name: 'Dashboard' as Category, icon: Code2 }
-  ]
+    { name: "Todos" as Category, icon: Layers },
+    { name: "Web" as Category, icon: Globe },
+    { name: "Front-End" as Category, icon: Smartphone },
+    { name: "SaaS" as Category, icon: Zap },
+    { name: "AI/ML" as Category, icon: Brain },
+    { name: "Dashboard" as Category, icon: Code2 },
+  ];
 
   const projects: Project[] = [
     {
-      title: 'EstocaAi',
-      description: 'Sistema de gerenciamento de estoque com design moderno, gráficos em tempo real e integração com Firebase para autenticação e controle de produtos, vendas e entradas.',
-      image: '',
-      tech: ['React', 'TypeScript', 'Firebase', 'Chart.js'],
-      gradient: 'from-pink-500 to-rose-500',
-      category: 'Web',
+      title: "EstocaAi",
+      description:
+        "Sistema de gerenciamento de estoque com design moderno, gráficos em tempo real e integração com Firebase para autenticação e controle de produtos, vendas e entradas.",
+      image: "",
+      tech: ["React", "TypeScript", "Firebase", "Chart.js"],
+      gradient: "from-pink-500 to-rose-500",
+      category: "Web",
       featured: true,
-      github: 'https://github.com/DreyMendonca/stock', // exemplo real
-      live: 'https://estocaai.vercel.app' // exemplo
+      github: "https://github.com/DreyMendonca/stock", // exemplo real
+      live: "https://estocaai.vercel.app", // exemplo
     },
     {
-      title: 'PattyNails',
-      description: 'Sistema de agendamento e gerenciamento para salão de unhas, com autenticação via Firebase, controle de horários, clientes e interface moderna e intuitiva.',
-      image: '',
-      tech: ['Node.js', 'Express', 'JavaScript', 'Tailwind', 'BootStrap'],
-      gradient: 'from-pink-500 to-fuchsia-500',
-      category: 'Web',
+      title: "PattyNails",
+      description:
+        "Sistema de agendamento e gerenciamento para salão de unhas, com autenticação via Firebase, controle de horários, clientes e interface moderna e intuitiva.",
+      image: "",
+      tech: ["Node.js", "Express", "JavaScript", "Tailwind", "BootStrap"],
+      gradient: "from-pink-500 to-fuchsia-500",
+      category: "Web",
       featured: true,
-      github: '#',
-      live: '#'
+      github: "#",
+      live: "#",
     },
     {
-      title: 'SimoneBuffet',
-      description: 'Aplicação web voltada para o gerenciamento de eventos e pedidos, com design responsivo e foco em simplicidade e organização das informações.',
-      image: '',
-      tech: ['React', 'Tailwind', 'Firebase', 'Vite'],
-      gradient: 'from-pink-400 to-rose-500',
-      category: 'Web',
+      title: "SimoneBuffet",
+      description:
+        "Aplicação web voltada para o gerenciamento de eventos e pedidos, com design responsivo e foco em simplicidade e organização das informações.",
+      image: "/buffet.png",
+      tech: ["React", "Tailwind", "Firebase", "Vite"],
+      gradient: "from-pink-400 to-rose-500",
+      category: "Web",
       featured: true,
-      github: '#',
-      live: '#'
+      github: "https://github.com/nandamyrita/SimoneBuffet.git",
+      live: "https://simonebuffet.vercel.app/",
     },
     {
-      title: 'To-do List',
-      description: 'Aplicativo simples de lista de tarefas com funcionalidades de adicionar, marcar como concluída e remover, criado para praticar React e gerenciamento de estado.',
-      image: '',
-      tech: ['React', 'Tailwind', 'TypeScript'],
-      gradient: 'from-rose-500 to-pink-600',
-      category: 'Front-End',
+      title: "To-do List",
+      description:
+        "Aplicativo simples de lista de tarefas com funcionalidades de adicionar, marcar como concluída e remover, criado para praticar React e gerenciamento de estado.",
+      image: "",
+      tech: ["React", "Tailwind", "TypeScript"],
+      gradient: "from-rose-500 to-pink-600",
+      category: "Front-End",
       featured: true,
-      github: '#',
-      live: '#'
+      github: "#",
+      live: "#",
     },
     {
-      title: 'Spotify-Project',
-      description: 'Interface inspirada no Spotify, desenvolvida para praticar React e integração com APIs, com foco em UI/UX e responsividade.',
-      image: '',
-      tech: ['React', 'TypeScript', 'Tailwind'],
-      gradient: 'from-pink-500 to-rose-600',
-      category: 'Front-End',
-      github: '#',
-      live: '#'
+      title: "Spotify-Project",
+      description:
+        "Interface inspirada no Spotify, desenvolvida para praticar React e integração com APIs, com foco em UI/UX e responsividade.",
+      image: "/spotify.png",
+      tech: ["React", "TypeScript", "Tailwind"],
+      gradient: "from-pink-500 to-rose-600",
+      category: "Front-End",
+      github: "https://github.com/nandamyrita/Spotifyproject.git",
+      live: "https://spotifyproject-flax.vercel.app/",
     },
     {
-      title: 'Ghibli Fest',
-      description: 'Aplicação web que consome a API do Studio Ghibli, exibindo informações detalhadas sobre os filmes ao clicar em cada card.',
-      image: '',
-      tech: ['React', 'Tailwind', 'API', 'Next.js'],
-      gradient: 'from-fuchsia-500 to-pink-500',
-      category: 'Web',
-      github: '#',
-      live: '#'
+      title: "Ghibli Fest",
+      description:
+        "Aplicação web que consome a API do Studio Ghibli, exibindo informações detalhadas sobre os filmes ao clicar em cada card.",
+      image: "/ghibli.png",
+      tech: ["React", "Tailwind", "API", "Next.js"],
+      gradient: "from-fuchsia-500 to-pink-500",
+      category: "Web",
+      github: "https://github.com/nandamyrita/ghibli-website.git",
+      live: "https://ghibli-website-dfwm.vercel.app/",
     },
     {
-      title: 'Diarize',
-      description: 'Plataforma que conecta empregadas domésticas e contratantes, permitindo cadastro, busca e gerenciamento de perfis de forma prática e intuitiva.',
-      image: '',
-      tech: ['React', 'Next.js', 'Tailwind', 'TypeScript'],
-      gradient: 'from-pink-400 to-fuchsia-500',
-      category: 'Web',
-      github: '#',
-      live: '#'
-    }
-  ]
+      title: "Diarize",
+      description:
+        "Plataforma que conecta empregadas domésticas e contratantes, permitindo cadastro, busca e gerenciamento de perfis de forma prática e intuitiva.",
+      image: "",
+      tech: ["React", "Next.js", "Tailwind", "TypeScript"],
+      gradient: "from-pink-400 to-fuchsia-500",
+      category: "Web",
+      github: "#",
+      live: "#",
+    },
+    {
+      title: "ClimaTuor-ChatBot",
+      description:
+        "Plataforma que conecta empregadas domésticas e contratantes, permitindo cadastro, busca e gerenciamento de perfis de forma prática e intuitiva.",
+      image: "",
+      tech: ["React", "Next.js", "Tailwind", "TypeScript"],
+      gradient: "from-pink-400 to-fuchsia-500",
+      category: "Web",
+      github: "#",
+      live: "#",
+    },
 
-  const filteredProjects = selectedCategory === 'Todos'
-    ? projects
-    : projects.filter(project => project.category === selectedCategory)
+    {
+      title: "eda-games-sales",
+      description:
+        "Plataforma que conecta empregadas domésticas e contratantes, permitindo cadastro, busca e gerenciamento de perfis de forma prática e intuitiva.",
+      image: "",
+      tech: ["React", "Next.js", "Tailwind", "TypeScript"],
+      gradient: "from-pink-400 to-fuchsia-500",
+      category: "Web",
+      github: "#",
+      live: "#",
+    },
+  ];
 
-  const displayedProjects = showAll ? filteredProjects : filteredProjects.slice(0, 6)
+  const filteredProjects =
+    selectedCategory === "Todos"
+      ? projects
+      : projects.filter((project) => project.category === selectedCategory);
+
+  const displayedProjects = showAll
+    ? filteredProjects
+    : filteredProjects.slice(0, 6);
 
   return (
     <section className="py-20 px-6 relative overflow-hidden">
@@ -145,15 +188,15 @@ export function Projects() {
           className="flex flex-wrap justify-center gap-3 mb-12"
         >
           {categories.map((category, index) => {
-            const Icon = category.icon
-            const isActive = selectedCategory === category.name
+            const Icon = category.icon;
+            const isActive = selectedCategory === category.name;
 
             return (
               <motion.button
                 key={category.name}
                 onClick={() => {
-                  setSelectedCategory(category.name)
-                  setShowAll(false)
+                  setSelectedCategory(category.name);
+                  setShowAll(false);
                 }}
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -163,9 +206,10 @@ export function Projects() {
                 className={`
                   relative px-6 py-3 rounded-xl font-medium transition-all duration-300
                   flex items-center gap-2 overflow-hidden group
-                  ${isActive
-                    ? 'bg-gradient-to-r from-pink-500 to-rose-500 text-white shadow-lg shadow-pink-500/30'
-                    : 'bg-gray-800/50 text-gray-300 border border-pink-500/20 hover:border-pink-400/40'
+                  ${
+                    isActive
+                      ? "bg-gradient-to-r from-pink-500 to-rose-500 text-white shadow-lg shadow-pink-500/30"
+                      : "bg-gray-800/50 text-gray-300 border border-pink-500/20 hover:border-pink-400/40"
                   }
                 `}
               >
@@ -182,12 +226,20 @@ export function Projects() {
                 {/* Shine effect */}
                 <motion.div
                   className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
-                  initial={{ x: '-100%' }}
-                  animate={isActive ? { x: '100%' } : {}}
-                  transition={{ duration: 1.5, repeat: Infinity, repeatDelay: 2 }}
+                  initial={{ x: "-100%" }}
+                  animate={isActive ? { x: "100%" } : {}}
+                  transition={{
+                    duration: 1.5,
+                    repeat: Infinity,
+                    repeatDelay: 2,
+                  }}
                 />
 
-                <Icon className={`h-5 w-5 relative z-10 ${isActive ? 'animate-pulse' : ''}`} />
+                <Icon
+                  className={`h-5 w-5 relative z-10 ${
+                    isActive ? "animate-pulse" : ""
+                  }`}
+                />
                 <span className="relative z-10">{category.name}</span>
 
                 {isActive && (
@@ -198,7 +250,7 @@ export function Projects() {
                   />
                 )}
               </motion.button>
-            )
+            );
           })}
         </motion.div>
 
@@ -258,7 +310,6 @@ export function Projects() {
                   )}
                 </div>
 
-
                 {/* Featured Badge */}
                 {project.featured && (
                   <div className="absolute top-4 left-4 z-20">
@@ -288,9 +339,7 @@ export function Projects() {
                   />
 
                   {/* Hover overlay with View Details */}
-                  <motion.div
-                    className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"
-                  >
+                  <motion.div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                     <motion.div
                       initial={{ scale: 0, y: 20 }}
                       whileHover={{ scale: 1, y: 0 }}
@@ -338,7 +387,10 @@ export function Projects() {
 
                 {/* Decorative elements */}
                 <div className="absolute top-4 right-4 w-2 h-2 bg-pink-400 rounded-full animate-pulse" />
-                <div className="absolute bottom-4 right-4 w-1 h-1 bg-rose-400 rounded-full animate-pulse" style={{ animationDelay: '0.5s' }} />
+                <div
+                  className="absolute bottom-4 right-4 w-1 h-1 bg-rose-400 rounded-full animate-pulse"
+                  style={{ animationDelay: "0.5s" }}
+                />
               </motion.div>
             ))}
           </motion.div>
@@ -360,12 +412,14 @@ export function Projects() {
             >
               <motion.div
                 className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/30 to-white/0"
-                initial={{ x: '-100%' }}
-                whileHover={{ x: '100%' }}
+                initial={{ x: "-100%" }}
+                whileHover={{ x: "100%" }}
                 transition={{ duration: 0.6 }}
               />
               <span className="relative z-10">
-                {showAll ? 'Ver Menos' : `Ver Mais ${filteredProjects.length - 6} Projetos`}
+                {showAll
+                  ? "Ver Menos"
+                  : `Ver Mais ${filteredProjects.length - 6} Projetos`}
               </span>
             </Button>
           </motion.div>
@@ -385,5 +439,5 @@ export function Projects() {
         )}
       </div>
     </section>
-  )
+  );
 }
