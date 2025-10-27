@@ -118,7 +118,7 @@ export function Hero() {
 
                 <div className="flex gap-4">
                   <motion.a
-                    href="#"
+                    href="https://github.com/nandamyrita"
                     whileHover={{
                       scale: 1.15,
                       rotate: 360,
@@ -130,7 +130,7 @@ export function Hero() {
                     <Github className="h-6 w-6 text-pink-400 group-hover:text-white transition-colors" />
                   </motion.a>
                   <motion.a
-                    href="#"
+                    href="https://www.linkedin.com/in/maria-fernanda-439137202/"
                     whileHover={{
                       scale: 1.15,
                       rotate: -360,
@@ -142,7 +142,7 @@ export function Hero() {
                     <Linkedin className="h-6 w-6 text-pink-400 group-hover:text-white transition-colors" />
                   </motion.a>
                   <motion.a
-                    href="#"
+                    href="mariafernanda.mfsm8@gmail.com"
                     whileHover={{
                       scale: 1.15,
                       rotate: 360,
