@@ -102,26 +102,14 @@ export function Projects() {
     {
       title: "ClimaTuor-ChatBot",
       description:
-        "Plataforma que conecta empregadas domésticas e contratantes, permitindo cadastro, busca e gerenciamento de perfis de forma prática e intuitiva.",
-      image: "",
+        "ChatBot inteligente que fornece informações sobre o clima em diferentes cidades, usando tecnologias de IA para respostas rápidas e precisas.",
+      image: "/chatbot.png",
       tech: ["React", "Next.js", "Tailwind", "TypeScript"],
       gradient: "from-pink-400 to-fuchsia-500",
       category: "AI/ML",
-      github: "#",
-      live: "#",
+      github: "https://github.com/nandamyrita/ClimaTour-IA-Agent.git",
     },
 
-    {
-      title: "eda-games-sales",
-      description:
-        "Plataforma que conecta empregadas domésticas e contratantes, permitindo cadastro, busca e gerenciamento de perfis de forma prática e intuitiva.",
-      image: "",
-      tech: ["React", "Next.js", "Tailwind", "TypeScript"],
-      gradient: "from-pink-400 to-fuchsia-500",
-      category: "AI/ML",
-      github: "#",
-      live: "#",
-    },
   ];
 
   const filteredProjects =

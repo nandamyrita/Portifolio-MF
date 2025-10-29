@@ -59,23 +59,7 @@ export function Experience() {
       tech: ["React", "Node.js", "Firebase", "CSS"],
       highlight: false,
     },
-    {
-      title: "Sistema de Agendamento ",
-      company: "Patty Nails",
-      period: "2024",
-      location: "São Paulo, SP",
-      description:
-        "Desenvolvi uma landing page moderna e responsiva para um salão de beleza, destacando serviços, portfólio e canais de contato, e formulario de agendamento com acesso a area de administrador e controle de cancelamento e horarios.",
-      achievements: [
-        "Criei layout atraente com foco em identidade visual e experiência do usuário",
-        "Implementei formulário de agendamento integrado ao e-mail do salão",
-        "Aumentei a presença digital do negócio e facilitei a captação de clientes",
-      ],
-      tech: ["HTML", "CSS", "JavaScript", "TailwindCSS"],
-      highlight: false,
-    },
-
-
+    
   ];
 
   return (
