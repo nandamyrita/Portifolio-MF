@@ -34,8 +34,6 @@ export function Projects() {
   const categories = [
     { name: "Todos" as Category, icon: Layers },
     { name: "Web" as Category, icon: Globe },
-    { name: "Front-End" as Category, icon: Smartphone },
-    { name: "SaaS" as Category, icon: Zap },
     { name: "AI/ML" as Category, icon: Brain },
     { name: "Dashboard" as Category, icon: Code2 },
   ];
@@ -45,26 +43,15 @@ export function Projects() {
       title: "EstocaAi",
       description:
         "Sistema de gerenciamento de estoque com design moderno, gráficos em tempo real e integração com Firebase para autenticação e controle de produtos, vendas e entradas.",
-      image: "",
+      image: "/dashboard.png",
       tech: ["React", "TypeScript", "Firebase", "Chart.js"],
       gradient: "from-pink-500 to-rose-500",
-      category: "Web",
+      category: "Dashboard",
       featured: true,
-      github: "https://github.com/DreyMendonca/stock", // exemplo real
-      live: "https://estocaai.vercel.app", // exemplo
+      github: "https://github.com/DreyMendonca/stock", 
+      live: "https://estocai.vercel.app/", 
     },
-    {
-      title: "PattyNails",
-      description:
-        "Sistema de agendamento e gerenciamento para salão de unhas, com autenticação via Firebase, controle de horários, clientes e interface moderna e intuitiva.",
-      image: "",
-      tech: ["Node.js", "Express", "JavaScript", "Tailwind", "BootStrap"],
-      gradient: "from-pink-500 to-fuchsia-500",
-      category: "Web",
-      featured: true,
-      github: "#",
-      live: "#",
-    },
+    
     {
       title: "SimoneBuffet",
       description:
@@ -81,13 +68,13 @@ export function Projects() {
       title: "To-do List",
       description:
         "Aplicativo simples de lista de tarefas com funcionalidades de adicionar, marcar como concluída e remover, criado para praticar React e gerenciamento de estado.",
-      image: "",
+      image: "/todo-list.png",
       tech: ["React", "Tailwind", "TypeScript"],
       gradient: "from-rose-500 to-pink-600",
-      category: "Front-End",
+      category: "Web",
       featured: true,
-      github: "#",
-      live: "#",
+      github: "https://github.com/nandamyrita/todo-list.git",
+      live: "https://todo-list-nine-kappa-68.vercel.app/",
     },
     {
       title: "Spotify-Project",
@@ -111,17 +98,7 @@ export function Projects() {
       github: "https://github.com/nandamyrita/ghibli-website.git",
       live: "https://ghibli-website-dfwm.vercel.app/",
     },
-    {
-      title: "Diarize",
-      description:
-        "Plataforma que conecta empregadas domésticas e contratantes, permitindo cadastro, busca e gerenciamento de perfis de forma prática e intuitiva.",
-      image: "",
-      tech: ["React", "Next.js", "Tailwind", "TypeScript"],
-      gradient: "from-pink-400 to-fuchsia-500",
-      category: "Web",
-      github: "#",
-      live: "#",
-    },
+   
     {
       title: "ClimaTuor-ChatBot",
       description:
@@ -129,7 +106,7 @@ export function Projects() {
       image: "",
       tech: ["React", "Next.js", "Tailwind", "TypeScript"],
       gradient: "from-pink-400 to-fuchsia-500",
-      category: "Web",
+      category: "AI/ML",
       github: "#",
       live: "#",
     },
@@ -141,7 +118,7 @@ export function Projects() {
       image: "",
       tech: ["React", "Next.js", "Tailwind", "TypeScript"],
       gradient: "from-pink-400 to-fuchsia-500",
-      category: "Web",
+      category: "AI/ML",
       github: "#",
       live: "#",
     },

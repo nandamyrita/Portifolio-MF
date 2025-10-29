@@ -89,9 +89,9 @@ export function Experience() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-pink-400 to-orange-500 bg-clip-text text-transparent">
-            Minha Tragetoria
+            Minha Trajetoria
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-300 mx-auto">
             Minha jornada de crescimento no mundo da tecnologia
           </p>
         </motion.div>

@@ -82,7 +82,7 @@ export function Skills() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-pink-400 to-orange-500 bg-clip-text text-transparent">
-            Habilidades & Expertise
+            Habilidades
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Competências técnicas desenvolvidas ao longo de anos de experiência
