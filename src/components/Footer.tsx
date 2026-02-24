@@ -1,9 +1,10 @@
+import React from 'react'
 import { motion } from 'motion/react'
 import { Heart, Code, Coffee } from 'lucide-react'
 
 export function Footer() {
   return (
-    <footer className="py-12 px-6 border-t border-pink-500/20 bg-gradient-to-b from-black/50 to-black">
+    <footer className="py-12 px-6 border-t border-pink-500/20 bg-gradient-to-b from-gray-50/50 dark:from-black/50 to-gray-100 dark:to-black transition-colors duration-300">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -13,53 +14,30 @@ export function Footer() {
           className="text-center space-y-6"
         >
           
-          <div className="flex items-center justify-center gap-3 mb-8">
-            <img
-                className="w-20 p-2 mr-7"
-                src="/logo.png"
-                alt="logo"
-              />
-          </div>
 
-          {/* Quote */}
-          <motion.p
-            className="text-gray-300 max-w-2xl mx-auto text-lg italic"
-            animate={{ 
-              backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
-            }}
-            transition={{ 
-              duration: 4,
-              repeat: Infinity,
-              ease: "linear"
-            }}
-          >
-           
-          </motion.p>
-
-          
-          <div className="flex items-center justify-center gap-2 text-gray-400">
+          <div className="flex items-center justify-center gap-2 text-gray-500 dark:text-gray-400">
             <span>Feito com</span>
             <motion.div
               animate={{ scale: [1, 1.2, 1] }}
               transition={{ duration: 1, repeat: Infinity }}
             >
-              <Heart className="h-5 w-5 text-pink-400 fill-current" />
+              <Heart className="h-5 w-5 text-pink-500 dark:text-pink-400 fill-current" />
             </motion.div>
             <span>e muito</span>
             <motion.div
               animate={{ rotate: [0, 5, -5, 0] }}
               transition={{ duration: 2, repeat: Infinity }}
             >
-              <Coffee className="h-5 w-5 text-pink-400" />
+              <Coffee className="h-5 w-5 text-pink-500 dark:text-pink-400" />
             </motion.div>
           </div>
 
           {/* Copyright */}
           <motion.div
-            className="pt-8 border-t border-pink-500/20"
+            className=""
             whileHover={{ scale: 1.02 }}
           >
-            <p className="text-gray-500">
+            <p className="text-gray-400 dark:text-gray-500">
               © 2025 Nanda. Todos os direitos reservados.
             </p>
 

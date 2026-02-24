@@ -1,3 +1,4 @@
+import React from "react";
 import { Navigation } from "./components/Navigation";
 import { Hero } from "./components/Hero";
 import { About } from "./components/About";
@@ -6,40 +7,43 @@ import { Projects } from "./components/Projects";
 import { Skills } from "./components/Skills";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
+import { ThemeProvider } from "./contexts/ThemeContext";
 
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-black text-white overflow-x-hidden">
-      <Navigation />
+    <ThemeProvider>
+      <div className="min-h-screen bg-white dark:bg-black text-gray-900 dark:text-white overflow-x-hidden transition-colors duration-300">
+        <Navigation />
 
-      <main>
-        <section id="home">
-          <Hero />
-        </section>
+        <main>
+          <section id="home">
+            <Hero />
+          </section>
 
-        <section id="about">
-          <About />
-        </section>
+          <section id="about">
+            <About />
+          </section>
 
-        <section id="experience">
-          <Experience />
-        </section>
+          <section id="experience">
+            <Experience />
+          </section>
 
-        <section id="projects">
-          <Projects />
-        </section>
+          <section id="projects">
+            <Projects />
+          </section>
 
-        <section id="skills">
-          <Skills />
-        </section>
+          <section id="skills">
+            <Skills />
+          </section>
 
-        <section id="contact">
-          <Contact />
-        </section>
-      </main>
+          <section id="contact">
+            <Contact />
+          </section>
+        </main>
 
-      <Footer />
-    </div>
+        <Footer />
+      </div>
+    </ThemeProvider>
   );
 }

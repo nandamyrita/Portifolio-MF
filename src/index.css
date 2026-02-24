@@ -1,3 +1,88 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Variáveis de tema */
+:root {
+  /* Light mode (padrão) */
+  --bg-primary: #fafafa;
+  --bg-secondary: #f5f5f5;
+  --bg-card: rgba(255, 255, 255, 0.8);
+  --bg-card-hover: rgba(255, 255, 255, 0.95);
+  --text-primary: #1a1a1a;
+  --text-secondary: #4a4a4a;
+  --text-muted: #6b7280;
+  --border-color: rgba(236, 72, 153, 0.3);
+  --border-hover: rgba(236, 72, 153, 0.5);
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --nav-bg: rgba(255, 255, 255, 0.8);
+  --timeline-bg: #e5e7eb;
+  --input-bg: rgba(249, 250, 251, 0.8);
+  --skill-bar-bg: #e5e7eb;
+}
+
+.dark {
+  --bg-primary: #000000;
+  --bg-secondary: #0a0a0a;
+  --bg-card: rgba(31, 41, 55, 0.5);
+  --bg-card-hover: rgba(31, 41, 55, 0.8);
+  --text-primary: #ffffff;
+  --text-secondary: #d1d5db;
+  --text-muted: #9ca3af;
+  --border-color: rgba(236, 72, 153, 0.2);
+  --border-hover: rgba(236, 72, 153, 0.4);
+  --glass-bg: rgba(0, 0, 0, 0.2);
+  --nav-bg: rgba(0, 0, 0, 0.2);
+  --timeline-bg: #374151;
+  --input-bg: rgba(31, 41, 55, 0.5);
+  --skill-bar-bg: #374151;
+}
+
+/* Estilos globais para responsividade */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  body {
+    @apply overflow-x-hidden;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+}
+
+@layer utilities {
+  /* Esconder scrollbar mantendo funcionalidade */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Safe area para dispositivos com notch */
+  .safe-area-inset-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  
+  .safe-area-inset-top {
+    padding-top: env(safe-area-inset-top);
+  }
+}
+
+/* Ajustes de fonte para mobile */
+@media (max-width: 640px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+/* Prevenir zoom em inputs no iOS */
+@media screen and (max-width: 768px) {
+  input, select, textarea {
+    font-size: 16px !important;
+  }
+}

@@ -1,3 +1,4 @@
+import React from "react";
 import { motion } from "motion/react";
 import {
   Code2,
@@ -6,70 +7,81 @@ import {
   Server,
   Smartphone,
   Globe,
+  Brain,
+  Bot,
 } from "lucide-react";
 
 export function Skills() {
   const skillCategories = [
-  {
-    icon: Code2,
-    title: "Frontend",
-    skills: [
-      { name: "React/Next.js", level: 95 },
-      { name: "TypeScript", level: 90 },
-      { name: "Tailwind CSS", level: 85 },
-      { name: "Motion/Framer", level: 80 },
-    ],
-    gradient: "from-pink-500 to-rose-500",
-  },
-  {
-    icon: Server,
-    title: "Backend",
-    skills: [
-      { name: "Node.js", level: 90 },
-      { name: "Python", level: 85 },
-      { name: "API REST", level: 95 },
-    ],
-    gradient: "from-orange-500 to-indigo-500",
-  },
-  {
-    icon: Database,
-    title: "Database",
-    skills: [
-      { name: "MongoDB", level: 80 },
-      { name: "Firebase", level: 70 },
-    ],
-    gradient: "from-cyan-500 to-blue-500",
-  },
-  {
-    icon: Globe,
-    title: "Dados",
-    skills: [
-      { name: "Pandas", level: 40 },
-      { name: "NumPy", level: 40 },
-      { name: "Power BI", level: 30 },
-      { name: "Matplotlib/Seaborn", level: 40 },
-      { name: "Jupyter Notebook", level: 60 },
-    ],
-    gradient: "from-emerald-500 to-teal-500",
-  },
-  {
-    icon: Smartphone,
-    title: "Mobile",
-    skills: [
-      { name: "React Native", level: 20 },
-    ],
-    gradient: "from-orange-500 to-red-500",
-  },
-  {
-    icon: Palette,
-    title: "Design",
-    skills: [
-      { name: "Figma", level: 85 },
-      { name: "UI/UX", level: 80 },
-    ],
-    gradient: "from-violet-500 to-orange-500",
-  },
-];
+    {
+      icon: Code2,
+      title: "Frontend",
+      skills: [
+        { name: "React/Next.js", level: 95 },
+        { name: "TypeScript", level: 90 },
+        { name: "Tailwind CSS", level: 85 },
+        { name: "Motion/Framer", level: 80 },
+        { name: "Chart.js", level: 75 },
+      ],
+      gradient: "from-pink-500 to-rose-500",
+    },
+    {
+      icon: Server,
+      title: "Backend",
+      skills: [
+        { name: "Node.js", level: 90 },
+        { name: "Python", level: 85 },
+        { name: "FastAPI", level: 80 },
+        { name: "Express", level: 75 },
+        { name: "API REST", level: 95 },
+      ],
+      gradient: "from-orange-500 to-indigo-500",
+    },
+    {
+      icon: Brain,
+      title: "IA & Machine Learning",
+      skills: [
+        { name: "Machine Learning", level: 70 },
+        { name: "ChatBot/Dify", level: 85 },
+        { name: "Langfuse", level: 75 },
+        { name: "OpenAI API", level: 80 },
+        { name: "LLMs/Agentes", level: 75 },
+      ],
+      gradient: "from-purple-500 to-pink-500",
+    },
+    {
+      icon: Database,
+      title: "Database",
+      skills: [
+        { name: "MongoDB", level: 80 },
+        { name: "Firebase", level: 85 },
+        { name: "PostgreSQL", level: 75 },
+        { name: "MySQL", level: 70 },
+        { name: "SQL", level: 80 },
+      ],
+      gradient: "from-cyan-500 to-blue-500",
+    },
+    {
+      icon: Globe,
+      title: "Dados",
+      skills: [
+        { name: "Pandas", level: 60 },
+        { name: "NumPy", level: 55 },
+        { name: "Matplotlib/Seaborn", level: 55 },
+        { name: "Jupyter Notebook", level: 75 },
+      ],
+      gradient: "from-emerald-500 to-teal-500",
+    },
+    {
+      icon: Palette,
+      title: "Design",
+      skills: [
+        { name: "Figma", level: 85 },
+        { name: "UI/UX", level: 80 },
+      ],
+      gradient: "from-violet-500 to-orange-500",
+    },
+  ];
 
   return (
     <section className="py-20 px-6 relative overflow-hidden">
@@ -84,7 +96,7 @@ export function Skills() {
           <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-pink-400 to-orange-500 bg-clip-text text-transparent">
             Habilidades
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
             Competências técnicas desenvolvidas ao longo de anos de experiência
             em projetos desafiadores
           </p>
@@ -99,7 +111,7 @@ export function Skills() {
               transition={{ duration: 0.8, delay: categoryIndex * 0.1 }}
               viewport={{ once: true }}
               whileHover={{ y: -5 }}
-              className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur border border-pink-500/20 rounded-2xl p-8 hover:border-pink-400/40 transition-all duration-300"
+              className="bg-gradient-to-br from-white/80 dark:from-gray-800/50 to-gray-100/80 dark:to-gray-900/50 backdrop-blur border border-pink-500/20 rounded-2xl p-8 hover:border-pink-400/40 transition-all duration-300 shadow-lg dark:shadow-none"
             >
               <div className="flex items-center gap-4 mb-8">
                 <div
@@ -107,7 +119,7 @@ export function Skills() {
                 >
                   <category.icon className="h-7 w-7 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold text-white">
+                <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
                   {category.title}
                 </h3>
               </div>
@@ -116,10 +128,10 @@ export function Skills() {
                 {category.skills.map((skill, skillIndex) => (
                   <div key={skillIndex} className="space-y-2">
                     <div className="flex justify-between items-center">
-                      <span className="text-gray-300">{skill.name}</span>
-                      <span className="text-pink-400">{skill.level}%</span>
+                      <span className="text-gray-600 dark:text-gray-300">{skill.name}</span>
+                      <span className="text-pink-500 dark:text-pink-400">{skill.level}%</span>
                     </div>
-                    <div className="h-2 bg-gray-700 rounded-full overflow-hidden">
+                    <div className="h-2 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
                       <motion.div
                         className={`h-full bg-gradient-to-r ${category.gradient} rounded-full`}
                         initial={{ width: 0 }}
@@ -151,11 +163,15 @@ export function Skills() {
           </h3>
           <div className="flex flex-wrap justify-center gap-4">
             {[
+              "Git/GitHub",
+              "Docker",
+              "Vite",
+              "Vercel",
+              "Postman",
               "Metodologias Ágeis",
               "Clean Code",
-              "Git/GitHub",
               "Code Review",
-              "Technical Writing",
+              "Automação de Processos",
             ].map((skill, index) => (
               <motion.span
                 key={skill}
@@ -164,7 +180,7 @@ export function Skills() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
                 whileHover={{ scale: 1.05, rotate: 2 }}
-                className="px-6 py-3 bg-gradient-to-r from-pink-500/10 to-orange-500/10 backdrop-blur border border-pink-500/30 rounded-xl text-pink-300 hover:border-pink-400/50 hover:bg-pink-500/20 transition-all duration-300 cursor-default"
+                className="px-6 py-3 bg-gradient-to-r from-pink-500/10 to-orange-500/10 backdrop-blur border border-pink-500/30 rounded-xl text-pink-600 dark:text-pink-300 hover:border-pink-400/50 hover:bg-pink-500/20 transition-all duration-300 cursor-default"
               >
                 {skill}
               </motion.span>

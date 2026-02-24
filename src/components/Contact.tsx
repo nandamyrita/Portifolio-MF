@@ -1,6 +1,6 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { motion } from "motion/react";
-import { Mail, Phone, MapPin, Send, Github, Linkedin } from "lucide-react";
+import { Mail, Phone, MapPin, Send, Github, Linkedin, MessageCircle } from "lucide-react";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
@@ -37,7 +37,7 @@ export function Contact() {
     {
       icon: Phone,
       label: "Telefone",
-      value: "+55 (11)95163-1729",
+      value: "+55 (11) 95163-1729",
       href: "tel:+5511951631729",
     },
     {
@@ -58,7 +58,7 @@ export function Contact() {
   ];
 
   return (
-    <section className="py-20 px-6 relative overflow-hidden">
+    <section className="py-12 sm:py-20 px-4 sm:px-6 relative overflow-hidden">
       <div className="max-w-6xl mx-auto">
         {/* Cabeçalho */}
         <motion.div
@@ -66,69 +66,94 @@ export function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-10 sm:mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-pink-400 to-orange-500 bg-clip-text text-transparent">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-pink-400 to-orange-500 bg-clip-text text-transparent">
             Vamos Conversar?
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Tenho uma ideia incrível ou quer colaborar em um projeto? Entre em
-            contato!
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto px-2">
+            Tem uma ideia incrível ou quer colaborar em um projeto? Entre em contato!
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12">
           {/* Informações de contato */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="space-y-8"
+            className="space-y-4 sm:space-y-6"
           >
-            <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur border border-pink-500/20 rounded-2xl p-8">
-              <h3 className="text-2xl font-bold text-pink-400 mb-6">
-                Informações de Contato
-              </h3>
-              <div className="space-y-6">
+            {/* Card de informações */}
+            <motion.div
+              whileHover={{ scale: 1.02, y: -5 }}
+              transition={{ duration: 0.3 }}
+              className="bg-gradient-to-br from-white/80 dark:from-gray-800/50 to-gray-100/80 dark:to-gray-900/50 backdrop-blur border border-pink-500/20 rounded-xl sm:rounded-2xl p-5 sm:p-6 lg:p-8 hover:border-pink-400/40 transition-all duration-300 shadow-lg dark:shadow-none"
+            >
+              <div className="flex items-center gap-3 mb-6">
+                <div className="bg-gradient-to-r from-pink-500 to-orange-500 w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center">
+                  <MessageCircle className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
+                </div>
+                <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white">
+                  Informações de Contato
+                </h3>
+              </div>
+
+              <div className="space-y-4">
                 {contactInfo.map((info, index) => (
                   <motion.a
                     key={index}
                     href={info.href}
-                    whileHover={{ scale: 1.02, x: 5 }}
-                    className="flex items-center gap-4 p-4 bg-pink-500/10 rounded-xl border border-pink-500/20 hover:border-pink-400/40 hover:bg-pink-500/20 transition-all duration-300 group"
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    viewport={{ once: true }}
+                    whileHover={{ x: 5 }}
+                    className="flex items-center gap-4 p-3 sm:p-4 bg-pink-500/10 rounded-lg sm:rounded-xl border border-pink-500/20 hover:border-pink-400/40 hover:bg-pink-500/20 transition-all duration-300 group"
                   >
-                    <div className="bg-gradient-to-r from-pink-500 to-orange-500 w-12 h-12 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
-                      <info.icon className="h-6 w-6 text-white" />
+                    <div className="bg-gradient-to-r from-pink-500 to-orange-500 w-10 h-10 sm:w-11 sm:h-11 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform flex-shrink-0">
+                      <info.icon className="h-4 w-4 sm:h-5 sm:w-5 text-white" />
                     </div>
-                    <div>
-                      <p className="text-gray-400 text-sm">{info.label}</p>
-                      <p className="text-white font-medium">{info.value}</p>
+                    <div className="min-w-0 flex-1">
+                      <p className="text-gray-500 dark:text-gray-400 text-xs sm:text-sm">{info.label}</p>
+                      <p className="text-gray-900 dark:text-white font-medium text-sm sm:text-base truncate group-hover:text-pink-500 dark:group-hover:text-pink-300 transition-colors">
+                        {info.value}
+                      </p>
                     </div>
                   </motion.a>
                 ))}
               </div>
-            </div>
+            </motion.div>
 
             {/* Redes sociais */}
-            <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur border border-pink-500/20 rounded-2xl p-8">
-              <h3 className="text-2xl font-bold text-pink-400 mb-6">
+            <motion.div
+              whileHover={{ scale: 1.02, y: -5 }}
+              transition={{ duration: 0.3 }}
+              className="bg-gradient-to-br from-white/80 dark:from-gray-800/50 to-gray-100/80 dark:to-gray-900/50 backdrop-blur border border-pink-500/20 rounded-xl sm:rounded-2xl p-5 sm:p-6 lg:p-8 hover:border-pink-400/40 transition-all duration-300 shadow-lg dark:shadow-none"
+            >
+              <h3 className="text-xl sm:text-2xl font-bold text-pink-500 mb-4 sm:mb-6">
                 Redes Sociais
               </h3>
-              <div className="flex gap-4">
+              <div className="flex gap-3 sm:gap-4">
                 {socialLinks.map((social, index) => (
                   <motion.a
                     key={index}
                     href={social.href}
-                    whileHover={{ scale: 1.1, rotate: 5 }}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    whileHover={{ scale: 1.1, y: -3 }}
                     whileTap={{ scale: 0.95 }}
-                    className="p-4 bg-gradient-to-r from-pink-500/20 to-orange-500/20 rounded-xl border border-pink-500/30 hover:border-pink-400/50 hover:bg-pink-500/30 transition-all duration-300 group"
+                    className="flex-1 p-3 sm:p-4 bg-pink-500/10 rounded-lg sm:rounded-xl border border-pink-500/20 hover:border-pink-400/40 hover:bg-pink-500/20 transition-all duration-300 flex items-center justify-center gap-2 sm:gap-3 group"
                   >
-                    <social.icon className="h-6 w-6 text-pink-400 group-hover:text-pink-300" />
+                    <social.icon className="h-5 w-5 sm:h-6 sm:w-6 text-pink-500 dark:text-pink-400 group-hover:text-pink-400 dark:group-hover:text-pink-300" />
+                    <span className="text-gray-600 dark:text-gray-300 font-medium text-sm sm:text-base group-hover:text-gray-900 dark:group-hover:text-white transition-colors">
+                      {social.label}
+                    </span>
                   </motion.a>
                 ))}
               </div>
-            </div>
+            </motion.div>
           </motion.div>
 
           {/* Formulário de contato */}
@@ -138,75 +163,88 @@ export function Contact() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <form
+            <motion.form
               onSubmit={handleSubmit}
-              className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur border border-pink-500/20 rounded-2xl p-8 space-y-6"
+              whileHover={{ scale: 1.01 }}
+              transition={{ duration: 0.3 }}
+              className="bg-gradient-to-br from-white/80 dark:from-gray-800/50 to-gray-100/80 dark:to-gray-900/50 backdrop-blur border border-pink-500/20 rounded-xl sm:rounded-2xl p-5 sm:p-6 lg:p-8 hover:border-pink-400/40 transition-all duration-300 h-full shadow-lg dark:shadow-none"
             >
-              <h3 className="text-2xl font-bold text-pink-400 mb-6">
-                Envie uma Mensagem
-              </h3>
+              <div className="flex items-center gap-3 mb-6">
+                <div className="bg-gradient-to-r from-pink-500 to-orange-500 w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center">
+                  <Send className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
+                </div>
+                <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white">
+                  Envie uma Mensagem
+                </h3>
+              </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="space-y-4 sm:space-y-5">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="space-y-2">
+                    <label className="text-gray-600 dark:text-gray-300 text-sm sm:text-base font-medium">
+                      Nome
+                    </label>
+                    <Input
+                      name="name"
+                      placeholder="Seu nome"
+                      value={form.name}
+                      onChange={handleChange}
+                      className="bg-white/80 dark:bg-gray-800/50 border-pink-500/30 focus:border-pink-400 text-gray-900 dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-500 h-10 sm:h-11 text-sm sm:text-base rounded-lg"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <label className="text-gray-600 dark:text-gray-300 text-sm sm:text-base font-medium">
+                      Email
+                    </label>
+                    <Input
+                      name="email"
+                      type="email"
+                      placeholder="seu@email.com"
+                      value={form.email}
+                      onChange={handleChange}
+                      className="bg-white/80 dark:bg-gray-800/50 border-pink-500/30 focus:border-pink-400 text-gray-900 dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-500 h-10 sm:h-11 text-sm sm:text-base rounded-lg"
+                    />
+                  </div>
+                </div>
+
                 <div className="space-y-2">
-                  <label className="text-gray-300">Nome</label>
+                  <label className="text-gray-600 dark:text-gray-300 text-sm sm:text-base font-medium">
+                    Assunto
+                  </label>
                   <Input
-                    name="name"
-                    placeholder="Seu nome"
-                    value={form.name}
+                    name="subject"
+                    placeholder="Sobre o que quer conversar?"
+                    value={form.subject}
                     onChange={handleChange}
-                    className="bg-gray-800/50 border-pink-500/30 focus:border-pink-400 text-white placeholder:text-gray-500"
+                    className="bg-white/80 dark:bg-gray-800/50 border-pink-500/30 focus:border-pink-400 text-gray-900 dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-500 h-10 sm:h-11 text-sm sm:text-base rounded-lg"
                   />
                 </div>
+
                 <div className="space-y-2">
-                  <label className="text-gray-300">Email</label>
-                  <Input
-                    name="email"
-                    type="email"
-                    placeholder="seu@email.com"
-                    value={form.email}
+                  <label className="text-gray-600 dark:text-gray-300 text-sm sm:text-base font-medium">
+                    Mensagem
+                  </label>
+                  <Textarea
+                    name="message"
+                    placeholder="Conte-me sobre seu projeto ou ideia..."
+                    rows={4}
+                    value={form.message}
                     onChange={handleChange}
-                    className="bg-gray-800/50 border-pink-500/30 focus:border-pink-400 text-white placeholder:text-gray-500"
+                    className="bg-white/80 dark:bg-gray-800/50 border-pink-500/30 focus:border-pink-400 text-gray-900 dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-500 resize-none text-sm sm:text-base rounded-lg"
                   />
                 </div>
-              </div>
 
-              <div className="space-y-2">
-                <label className="text-gray-300">Assunto</label>
-                <Input
-                  name="subject"
-                  placeholder="Assunto da mensagem"
-                  value={form.subject}
-                  onChange={handleChange}
-                  className="bg-gray-800/50 border-pink-500/30 focus:border-pink-400 text-white placeholder:text-gray-500"
-                />
+                <div className="pt-2">
+                  <button
+                    type="submit"
+                    className="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-full bg-gradient-to-br from-pink-500/20 to-orange-500/20 border border-pink-500/40 hover:border-pink-400 hover:shadow-lg hover:shadow-pink-500/30 transition-all duration-300"
+                  >
+                    <Send className="h-4 w-4 text-pink-400" />
+                    <span className="text-sm font-medium text-pink-400 hover:text-pink-300 transition-colors">Enviar via WhatsApp</span>
+                  </button>
+                </div>
               </div>
-
-              <div className="space-y-2">
-                <label className="text-gray-300">Mensagem</label>
-                <Textarea
-                  name="message"
-                  placeholder="Descreva sua ideia ou projeto..."
-                  rows={6}
-                  value={form.message}
-                  onChange={handleChange}
-                  className="bg-gray-800/50 border-pink-500/30 focus:border-pink-400 text-white placeholder:text-gray-500 resize-none"
-                />
-              </div>
-
-              <motion.div
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                <Button
-                  type="submit"
-                  size="lg"
-                  className="w-full bg-gradient-to-r from-pink-500 to-orange-500 hover:from-pink-600 hover:to-orange-600 border-0 text-white py-6 text-lg rounded-xl transition-all duration-300 hover:shadow-2xl hover:shadow-pink-500/25 group"
-                >
-                  <Send className="mr-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                  Enviar Mensagem
-                </Button>
-              </motion.div>
-            </form>
+            </motion.form>
           </motion.div>
         </div>
       </div>

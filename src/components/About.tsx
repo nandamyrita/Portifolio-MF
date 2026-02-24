@@ -1,5 +1,6 @@
+import React from "react";
 import { motion } from "motion/react";
-import { FaReact, FaNodeJs, FaJava, FaPython, FaBrain } from "react-icons/fa";
+import { FaReact, FaNodeJs, FaJava, FaPython, FaBrain, FaRobot, FaDocker } from "react-icons/fa";
 import {
   SiTypescript,
   SiJavascript,
@@ -10,8 +11,11 @@ import {
   SiFigma,
   SiCss3,
   SiHtml5,
+  SiPostman,
+  SiFastapi,
+  SiPostgresql,
 } from "react-icons/si";
-import { Code, Zap, Users, Trophy, Sparkles, Star, Heart } from "lucide-react";
+import { Code, Zap, Users, Trophy, Sparkles, Star, Heart, Database, Bot } from "lucide-react";
 
 export function About() {
   const stats = [
@@ -56,10 +60,6 @@ export function About() {
       ),
     },
     {
-      name: "Java",
-      icon: <FaJava className="inline-block mr-2 text-red-600" />,
-    },
-    {
       name: "MongoDB",
       icon: <SiMongodb className="inline-block mr-2 text-green-700" />,
     },
@@ -79,30 +79,56 @@ export function About() {
       name: "Machine Learning",
       icon: <FaBrain className="inline-block mr-2 text-purple-600" />,
     },
+    {
+      name: "SQL",
+      icon: <Database className="inline-block mr-2 text-blue-400" />,
+    },
+    {
+      name: "PostgreSQL",
+      icon: <SiPostgresql className="inline-block mr-2 text-blue-600" />,
+    },
+    {
+      name: "Docker",
+      icon: <FaDocker className="inline-block mr-2 text-blue-500" />,
+    },
+    {
+      name: "FastAPI",
+      icon: <SiFastapi className="inline-block mr-2 text-teal-500" />,
+    },
+    {
+      name: "Postman",
+      icon: <SiPostman className="inline-block mr-2 text-orange-500" />,
+    },
+    {
+      name: "ChatBot/Dify",
+      icon: <Bot className="inline-block mr-2 text-pink-500" />,
+    },
+    {
+      name: "Langfuse",
+      icon: <FaRobot className="inline-block mr-2 text-indigo-500" />,
+    },
   ];
 
   return (
-    <section className="py-20 px-6 relative overflow-hidden">
+    <section className="py-12 sm:py-20 px-4 sm:px-6 relative overflow-hidden">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-10 sm:mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-pink-500 to-orange-500 bg-clip-text text-transparent">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-pink-500 to-orange-500 bg-clip-text text-transparent">
             Sobre Mim
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            Sou desenvolvedora full-stack com foco em FrontEnd, familiarizada
-            com as principais tecnologias do mercado. Adoro criar interfaces
-            bonitas e funcionais que proporcionem experiências incríveis aos
-            usuário.
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed px-2">
+            Sou desenvolvedora full-stack com foco em IA, familiarizada
+            com as principais tecnologias do mercado.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center mb-10 sm:mb-16">
           {/* Pixel Art Avatar Section */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -114,7 +140,7 @@ export function About() {
             <div className="relative">
               {/* Decorative floating elements */}
               <motion.div
-                className="absolute -top-4 -left-4 w-8 h-8 bg-pink-500 rounded-lg"
+                className="absolute -top-3 -left-3 sm:-top-4 sm:-left-4 w-6 h-6 sm:w-8 sm:h-8 bg-pink-500 rounded-lg hidden sm:block"
                 animate={{
                   y: [0, -15, 0],
                   rotate: [0, 45, 0],
@@ -131,7 +157,7 @@ export function About() {
               />
 
               <motion.div
-                className="absolute -top-2 -right-6 w-6 h-6 bg-orange-500 rounded-md"
+                className="absolute -top-2 -right-4 sm:-right-6 w-5 h-5 sm:w-6 sm:h-6 bg-orange-500 rounded-md hidden sm:block"
                 animate={{
                   y: [0, -10, 0],
                   rotate: [0, -45, 0],
@@ -149,7 +175,7 @@ export function About() {
               />
 
               <motion.div
-                className="absolute -bottom-4 -right-4 w-10 h-10 bg-gradient-to-r from-pink-500 to-orange-400 rounded-lg flex items-center justify-center"
+                className="absolute -bottom-3 -right-3 sm:-bottom-4 sm:-right-4 w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-r from-pink-500 to-orange-400 rounded-lg flex items-center justify-center"
                 animate={{
                   y: [0, 12, 0],
                   x: [0, 8, 0],
@@ -161,13 +187,12 @@ export function About() {
                   delay: 2,
                 }}
               >
-                <Heart className="h-5 w-5 text-white" />
+                <Heart className="h-4 w-4 sm:h-5 sm:w-5 text-white" />
               </motion.div>
 
               {/* Pixel art style image container */}
-              {/* Pixel art style image container */}
               <motion.div
-                className="relative w-80 h-80 md:w-96 md:h-96 rounded-3xl overflow-hidden border-4 border-pink-500/40 bg-gradient-to-br from-gray-800 to-gray-900"
+                className="relative w-56 h-56 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-2xl sm:rounded-3xl overflow-hidden border-2 sm:border-4 border-pink-500/40 bg-gradient-to-br from-gray-100 dark:from-gray-800 to-gray-200 dark:to-gray-900"
                 whileHover={{ scale: 1.02, rotate: 1 }}
                 transition={{ duration: 0.3 }}
                 style={{
@@ -217,32 +242,32 @@ export function About() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="space-y-8"
+            className="space-y-4 sm:space-y-6 lg:space-y-8"
           >
             <motion.div
-              className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur border border-pink-500/20 rounded-3xl p-8 relative overflow-hidden group"
+              className="bg-gradient-to-br from-white/80 dark:from-gray-800/50 to-gray-100/80 dark:to-gray-900/50 backdrop-blur border border-pink-500/20 rounded-2xl sm:rounded-3xl p-5 sm:p-6 lg:p-8 relative overflow-hidden group shadow-lg dark:shadow-none"
               whileHover={{ scale: 1.02, y: -5 }}
               transition={{ duration: 0.3 }}
             >
               <motion.div
-                className="absolute top-4 right-4 text-pink-500"
+                className="absolute top-3 right-3 sm:top-4 sm:right-4 text-pink-500"
                 animate={{ rotate: [0, 360] }}
                 transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
               >
-                <Star className="h-6 w-6" />
+                <Star className="h-5 w-5 sm:h-6 sm:w-6" />
               </motion.div>
 
-              <h3 className="text-2xl font-bold text-pink-500 mb-4 flex items-center gap-2">
-                <Sparkles className="h-6 w-6" />
+              <h3 className="text-xl sm:text-2xl font-bold text-pink-500 mb-3 sm:mb-4 flex items-center gap-2">
+                <Sparkles className="h-5 w-5 sm:h-6 sm:w-6" />
                 Minha Jornada
               </h3>
-              <p className="text-gray-300 leading-relaxed text-lg">
-                Sempre tive interesse por tecnologia e design. Comecei minha
-                carreira com 17 anos dentro da minha atual graduação em
-                Desenvolvimento de Software Multiplataforma, e desde entao venho
-                aprimorando meus conhecimentos em diversas tecnologias
-                principalmente em React, e tambem fazendo diversos projetos que
-                auxiliam pessoas no seu cotidiano.
+              <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-sm sm:text-base lg:text-lg">
+                Sempre tive interesse por tecnologia e inovação. Comecei minha
+                carreira aos 17 anos na graduação em Desenvolvimento de Software
+                Multiplataforma, onde me apaixonei por React e desenvolvimento web.
+                Hoje, como estagiária de Data Science e IA na Solfácil, trabalho
+                com Machine Learning, ChatBots e automação de processos,
+                unindo código e inteligência artificial para criar soluções inovadoras.
               </p>
 
               <motion.div
@@ -252,12 +277,12 @@ export function About() {
             </motion.div>
 
             <motion.div
-              className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur border border-pink-500/20 rounded-3xl p-8 relative overflow-hidden group"
+              className="bg-gradient-to-br from-white/80 dark:from-gray-800/50 to-gray-100/80 dark:to-gray-900/50 backdrop-blur border border-pink-500/20 rounded-2xl sm:rounded-3xl p-5 sm:p-6 lg:p-8 relative overflow-hidden group shadow-lg dark:shadow-none"
               whileHover={{ scale: 1.02, y: -5 }}
               transition={{ duration: 0.3 }}
             >
               <motion.div
-                className="absolute top-4 right-4 text-orange-400"
+                className="absolute top-3 right-3 sm:top-4 sm:right-4 text-orange-400"
                 animate={{
                   scale: [1, 1.2, 1],
                   rotate: [0, 180, 360],
@@ -268,19 +293,19 @@ export function About() {
                   ease: "easeInOut",
                 }}
               >
-                <Heart className="h-6 w-6" />
+                <Heart className="h-5 w-5 sm:h-6 sm:w-6" />
               </motion.div>
 
-              <h3 className="text-2xl font-bold text-pink-500 mb-4 flex items-center gap-2">
-                <Code className="h-6 w-6" />
+              <h3 className="text-xl sm:text-2xl font-bold text-pink-500 mb-3 sm:mb-4 flex items-center gap-2">
+                <Code className="h-5 w-5 sm:h-6 sm:w-6" />
                 Filosofia
               </h3>
-              <p className="text-gray-300 leading-relaxed text-lg">
-                Acredito que código limpo e design intuitivo são fundamentais
-                para criar experiências excepcionais. Sempre levo em conta a
-                organizacao e boas praticas de desenvolvimento para que meus
-                clientes e desenvolvedores interessados possam compreender e
-                utilizar.
+              <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-sm sm:text-base lg:text-lg">
+                Acredito que código limpo, dados bem estruturados e soluções
+                inteligentes são fundamentais para criar impacto real. Busco
+                sempre unir boas práticas de desenvolvimento com inovação em IA,
+                criando ferramentas que otimizam processos e facilitam a vida
+                das pessoas.
               </p>
 
               <motion.div
@@ -298,38 +323,37 @@ export function About() {
           viewport={{ once: true }}
           className="text-center"
         >
-          <h3 className="text-3xl font-bold text-pink-500 mb-12 flex items-center justify-center gap-3">
+          <h3 className="text-2xl sm:text-3xl font-bold text-pink-500 mb-8 sm:mb-12 flex items-center justify-center gap-2 sm:gap-3">
             <motion.div
               animate={{ rotate: [0, 360] }}
               transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
             >
-              <Star className="h-8 w-8" />
+              <Star className="h-6 w-6 sm:h-8 sm:w-8" />
             </motion.div>
-            Tecnologias que domino
+            <span className="text-center">Tecnologias que domino</span>
             <motion.div
               animate={{ rotate: [0, -360] }}
               transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
             >
-              <Sparkles className="h-8 w-8" />
+              <Sparkles className="h-6 w-6 sm:h-8 sm:w-8" />
             </motion.div>
           </h3>
 
-          <div className="flex flex-wrap justify-center gap-4">
+          <div className="flex flex-wrap justify-center gap-2 sm:gap-3 lg:gap-4">
             {techList.map(({ name, icon }, index) => (
-              <motion.span
-                key={name}
-                initial={{ opacity: 0, scale: 0.8, y: 20 }}
-                whileInView={{ opacity: 1, scale: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                whileHover={{
-                  scale: 1.15,
-                  y: -8,
-                  rotate: [0, 5, -5, 0],
-                  boxShadow: "0 10px 30px rgba(255, 0, 110, 0.3)",
-                }}
-                className="px-8 py-4 bg-gradient-to-r from-pink-500/20 to-orange-500/20 backdrop-blur border border-pink-500/30 rounded-2xl text-pink-300 hover:border-pink-500/70 hover:text-white transition-all duration-500 relative overflow-hidden group cursor-pointer flex items-center"
-              >
+                <motion.span
+                  key={name}
+                  initial={{ opacity: 0, scale: 0.8, y: 20 }}
+                  whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.05 }}
+                  viewport={{ once: true }}
+                  whileHover={{
+                    scale: 1.1,
+                    y: -5,
+                    boxShadow: "0 10px 30px rgba(255, 0, 110, 0.3)",
+                  }}
+                  className="px-3 py-2 sm:px-5 sm:py-3 lg:px-8 lg:py-4 bg-gradient-to-r from-pink-500/20 to-orange-500/20 backdrop-blur border border-pink-500/30 rounded-xl sm:rounded-2xl text-pink-600 dark:text-pink-300 hover:border-pink-500/70 hover:text-pink-700 dark:hover:text-white transition-all duration-500 relative overflow-hidden group cursor-pointer flex items-center text-xs sm:text-sm lg:text-base"
+                >
                 {/* Animated background on hover */}
                 <motion.div
                   className="absolute inset-0 bg-gradient-to-r from-pink-500/30 to-orange-500/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
@@ -344,7 +368,7 @@ export function About() {
                   transition={{ duration: 0.6 }}
                 />
 
-                <span className="relative z-10 font-bold flex items-center">
+                <span className="relative z-10 font-medium sm:font-bold flex items-center">
                   {icon} {name}
                 </span>
               </motion.span>

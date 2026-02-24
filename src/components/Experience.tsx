@@ -1,3 +1,4 @@
+import React from "react";
 import { motion, useScroll, useTransform } from "motion/react";
 import { useRef } from "react";
 import { Calendar, MapPin, ExternalLink, Star } from "lucide-react";
@@ -13,6 +14,22 @@ export function Experience() {
 
   const experiences = [
     {
+      title: "Estagiária em Data Science e IA",
+      company: "Solfácil",
+      period: "Dezembro 2025 - Presente",
+      location: "São Paulo, SP",
+      description:
+        "Estágio na área de Data Science e Inteligência Artificial em uma das maiores financiadoras de painéis solares do Brasil, trabalhando com análise de dados e desenvolvimento de soluções baseadas em IA.",
+      achievements: [
+        "Desenvolvimento de modelos de Machine Learning para análise de dados",
+        "Soluções baseadas em IA para otimização de processos de financiamento solar",
+        "Chatbots e tools para automação de processos",
+      ],
+      tech: ["Python", "Machine Learning", "Data Science", "SQL", "PostgreSQL", "Dify", "ChatBot", "Docker", "Langfuse", "Postman", "FastAPI"],
+      highlight: true,
+    },
+
+    {
       title: "Tecnóloga em Desenvolvimento de Software Multiplataforma",
       company: "FATEC Zona Leste",
       period: "2024 - Presente",
@@ -25,7 +42,7 @@ export function Experience() {
         "Desenvolvi aplicações com foco em usabilidade e experiência do usuário",
       ],
       tech: ["React", "Node.js", "TypeScript", "Firebase", "Git", "etc..."],
-      highlight: true,
+      highlight: false,
     },
 
     {
@@ -44,65 +61,51 @@ export function Experience() {
       highlight: false,
     },
 
-    {
-      title: "EstocaAi - Gerenciamento de Adega",
-      company: "Adega Local",
-      period: "2025",
-      location: "São Paulo, SP",
-      description:
-        "Desenvolvi um sistema simples de controle de estoque personalizado para uma adega, permitindo cadastrar, atualizar e acompanhar produtos em tempo real, e um dashboard com graficos interativos.",
-      achievements: [
-        "Criei interface intuitiva para registro e atualização de produtos",
-        "Implementei alertas automáticos para produtos com estoque baixo",
-        "Organizei banco de dados para fácil manutenção e escalabilidade",
-      ],
-      tech: ["React", "Node.js", "Firebase", "CSS"],
-      highlight: false,
-    },
+   
     
   ];
 
   return (
-    <section ref={containerRef} className="py-20 px-6 relative overflow-hidden">
+    <section ref={containerRef} className="py-12 sm:py-20 px-4 sm:px-6 relative overflow-hidden">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-10 sm:mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-pink-400 to-orange-500 bg-clip-text text-transparent">
-            Minha Trajetoria
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-pink-400 to-orange-500 bg-clip-text text-transparent">
+            Experiência & Projetos
           </h2>
-          <p className="text-xl text-gray-300 mx-auto">
-            Minha jornada de crescimento no mundo da tecnologia
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 mx-auto px-2">
+            Do código à inteligência artificial — construindo soluções inovadoras
           </p>
         </motion.div>
 
         <div className="relative">
           {/* Animated timeline line */}
-          <div className="absolute left-8 md:left-1/2 transform md:-translate-x-0.5 w-1 bg-gray-700 h-full">
+          <div className="absolute left-4 sm:left-8 md:left-1/2 transform md:-translate-x-0.5 w-0.5 sm:w-1 bg-gray-300 dark:bg-gray-700 h-full">
             <motion.div
               className="w-full bg-gradient-to-b from-pink-500 to-orange-500/50 origin-top"
               style={{ height: lineHeight }}
             />
           </div>
 
-          <div className="space-y-12">
+          <div className="space-y-8 sm:space-y-12">
             {experiences.map((exp, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.2 }}
+                transition={{ duration: 0.8, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className={`relative flex items-center ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+                className={`relative flex items-start ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
                   }`}
               >
                 {/* Timeline dot */}
                 <motion.div
-                  className={`absolute left-8 md:left-1/2 transform md:-translate-x-1/2 w-6 h-6 rounded-full border-4 border-black z-10 ${exp.highlight ? "bg-pink-500" : "bg-orange-500"
+                  className={`absolute left-4 sm:left-8 md:left-1/2 transform md:-translate-x-1/2 w-4 h-4 sm:w-6 sm:h-6 rounded-full border-2 sm:border-4 border-white dark:border-black z-10 ${exp.highlight ? "bg-pink-500" : "bg-orange-500"
                     }`}
                   whileHover={{ scale: 1.3 }}
                   animate={
@@ -118,13 +121,13 @@ export function Experience() {
                   transition={{ duration: 2, repeat: Infinity }}
                 >
                   {exp.highlight && (
-                    <Star className="h-3 w-3 text-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
+                    <Star className="h-2 w-2 sm:h-3 sm:w-3 text-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
                   )}
                 </motion.div>
 
                 {/* Content card */}
                 <motion.div
-                  className={`ml-20 md:ml-0 w-full md:w-5/12 ${index % 2 === 0
+                  className={`ml-10 sm:ml-20 md:ml-0 w-full md:w-5/12 ${index % 2 === 0
                       ? "md:mr-auto md:pr-8"
                       : "md:ml-auto md:pl-8"
                     }`}
@@ -132,7 +135,7 @@ export function Experience() {
                   transition={{ duration: 0.3 }}
                 >
                   <div
-                    className={`bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur border rounded-2xl p-8 relative overflow-hidden group ${exp.highlight
+                    className={`bg-gradient-to-br from-white/80 dark:from-gray-800/50 to-gray-100/80 dark:to-gray-900/50 backdrop-blur border rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 relative overflow-hidden group shadow-lg dark:shadow-none ${exp.highlight
                         ? "border-pink-500/40"
                         : "border-orange-500/20"
                       } hover:border-pink-400/60 transition-all duration-500`}
@@ -144,44 +147,44 @@ export function Experience() {
                     />
 
                     <div className="relative z-10">
-                      <div className="flex items-start justify-between mb-4">
-                        <div>
-                          <h3 className="text-xl font-bold text-white mb-1 group-hover:text-pink-300 transition-colors">
+                      <div className="flex items-start justify-between mb-3 sm:mb-4">
+                        <div className="flex-1 min-w-0 pr-2">
+                          <h3 className="text-base sm:text-lg lg:text-xl font-bold text-gray-900 dark:text-white mb-1 group-hover:text-pink-500 dark:group-hover:text-pink-300 transition-colors">
                             {exp.title}
                           </h3>
-                          <p className="text-pink-500 font-medium">
+                          <p className="text-pink-500 font-medium text-sm sm:text-base">
                             {exp.company}
                           </p>
                         </div>
                         <motion.a
                           href="#"
                           whileHover={{ scale: 1.2, rotate: 45 }}
-                          className="p-2 bg-pink-500/20 rounded-lg hover:bg-pink-500/40 transition-colors"
+                          className="p-1.5 sm:p-2 bg-pink-500/20 rounded-lg hover:bg-pink-500/40 transition-colors flex-shrink-0"
                         >
-                          <ExternalLink className="h-4 w-4 text-pink-500" />
+                          <ExternalLink className="h-3 w-3 sm:h-4 sm:w-4 text-pink-500" />
                         </motion.a>
                       </div>
 
-                      <div className="flex items-center gap-4 mb-4 text-gray-400 text-sm">
+                      <div className="flex flex-wrap items-center gap-2 sm:gap-4 mb-3 sm:mb-4 text-gray-500 dark:text-gray-400 text-xs sm:text-sm">
                         <div className="flex items-center gap-1">
-                          <Calendar className="h-4 w-4" />
-                          {exp.period}
+                          <Calendar className="h-3 w-3 sm:h-4 sm:w-4" />
+                          <span className="truncate">{exp.period}</span>
                         </div>
                         <div className="flex items-center gap-1">
-                          <MapPin className="h-4 w-4" />
-                          {exp.location}
+                          <MapPin className="h-3 w-3 sm:h-4 sm:w-4" />
+                          <span className="truncate">{exp.location}</span>
                         </div>
                       </div>
 
-                      <p className="text-gray-300 mb-6 leading-relaxed">
+                      <p className="text-gray-600 dark:text-gray-300 mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base">
                         {exp.description}
                       </p>
 
-                      <div className="mb-6">
-                        <h4 className="text-pink-500 font-medium mb-3">
+                      <div className="mb-4 sm:mb-6">
+                        <h4 className="text-pink-500 font-medium mb-2 sm:mb-3 text-sm sm:text-base">
                           Principais conquistas:
                         </h4>
-                        <ul className="space-y-2">
+                        <ul className="space-y-1.5 sm:space-y-2">
                           {exp.achievements.map(
                             (achievement, achievementIndex) => (
                               <motion.li
@@ -193,13 +196,13 @@ export function Experience() {
                                   delay: achievementIndex * 0.1,
                                 }}
                                 viewport={{ once: true }}
-                                className="flex items-center gap-2 text-gray-300"
+                                className="flex items-start gap-2 text-gray-600 dark:text-gray-300 text-xs sm:text-sm"
                               >
                                 <motion.div
-                                  className="w-2 h-2 bg-pink-400 rounded-full"
+                                  className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-pink-400 rounded-full mt-1.5 flex-shrink-0"
                                   whileHover={{ scale: 1.5 }}
                                 />
-                                {achievement}
+                                <span>{achievement}</span>
                               </motion.li>
                             )
                           )}
@@ -208,10 +211,10 @@ export function Experience() {
 
                       {/* Technologies */}
                       <div>
-                        <h4 className="text-pink-500 font-medium mb-3">
+                        <h4 className="text-pink-500 font-medium mb-2 sm:mb-3 text-sm sm:text-base">
                           Tecnologias utilizadas:
                         </h4>
-                        <div className="flex flex-wrap gap-2">
+                        <div className="flex flex-wrap gap-1.5 sm:gap-2">
                           {exp.tech.map((tech, techIndex) => (
                             <motion.span
                               key={techIndex}
@@ -219,11 +222,11 @@ export function Experience() {
                               whileInView={{ opacity: 1, scale: 1 }}
                               transition={{
                                 duration: 0.3,
-                                delay: techIndex * 0.1,
+                                delay: techIndex * 0.05,
                               }}
                               viewport={{ once: true }}
                               whileHover={{ scale: 1.1, y: -2 }}
-                              className="px-3 py-1 bg-pink-500/20 text-pink-500 rounded-lg text-sm border border-pink-500/30 hover:border-pink-400/50 hover:bg-pink-500/50 hover:text-white transition-all duration-300"
+                              className="px-2 py-0.5 sm:px-3 sm:py-1 bg-pink-500/20 text-pink-500 rounded-md sm:rounded-lg text-xs sm:text-sm border border-pink-500/30 hover:border-pink-400/50 hover:bg-pink-500/50 hover:text-white transition-all duration-300"
                             >
                               {tech}
                             </motion.span>
@@ -244,22 +247,20 @@ export function Experience() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mt-16 p-8 bg-gradient-to-r from-pink-500/10 to-orange-500/50/10 backdrop-blur border border-pink-500/30 rounded-2xl"
+          className="text-center mt-10 sm:mt-16 p-5 sm:p-8 bg-gradient-to-r from-pink-500/10 to-orange-500/10 backdrop-blur border border-pink-500/30 rounded-xl sm:rounded-2xl shadow-lg dark:shadow-none"
         >
-          <h3 className="text-2xl font-bold text-pink-500 mb-4">
+          <h3 className="text-xl sm:text-2xl font-bold text-pink-500 mb-3 sm:mb-4">
             Quer saber mais sobre minha experiência?
           </h3>
-          <p className="text-gray-300 mb-6">
+          <p className="text-gray-600 dark:text-gray-300 mb-4 sm:mb-6 text-sm sm:text-base">
             Entre em contato para conversarmos sobre oportunidades e projetos.
           </p>
-          <motion.a
+          <a
             href="#contact"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="inline-block bg-gradient-to-r from-pink-500 to-orange-500/50 hover:from-pink-600 hover:to-orange-600 text-white px-8 py-4 rounded-xl transition-all duration-300 hover:shadow-2xl hover:shadow-pink-500/25"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-br from-pink-500/20 to-orange-500/20 border border-pink-500/40 hover:border-pink-400 hover:shadow-lg hover:shadow-pink-500/30 transition-all duration-300"
           >
-            Vamos conversar!
-          </motion.a>
+            <span className="text-sm font-medium text-pink-400 hover:text-pink-300 transition-colors">Vamos conversar!</span>
+          </a>
         </motion.div>
       </div>
     </section>
