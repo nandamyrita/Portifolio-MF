@@ -32,32 +32,16 @@ export function Experience() {
     {
       title: "Tecnóloga em Desenvolvimento de Software Multiplataforma",
       company: "FATEC Zona Leste",
-      period: "2024 - Presente",
+      period: "1º semestre de 2024 — conclusão prevista em dezembro de 2026",
       location: "São Paulo, SP",
       description:
-        "Cursando graduação focada em desenvolvimento full stack, com ênfase em criação de aplicações web, arquitetura de sistemas e boas práticas de programação.",
+        "Cursando o 6º semestre da graduação, com foco em desenvolvimento full stack, criação de aplicações web, arquitetura de sistemas e boas práticas de programação.",
       achievements: [
         "Participei de diversos projetos acadêmicos utilizando React, Node.js e Firebase",
         "Aprendi metodologias ágeis e trabalho colaborativo em equipe",
         "Desenvolvi aplicações com foco em usabilidade e experiência do usuário",
       ],
       tech: ["React", "Node.js", "TypeScript", "Firebase", "Git", "etc..."],
-      highlight: false,
-    },
-
-    {
-      title: "Sistema de Divulgação de Buffet",
-      company: "Simone Buffet",
-      period: "2025",
-      location: "São Paulo, SP",
-      description:
-        "Desenvolvi uma landing page com informações dos serviços disponibilizados pela Simone, como Buffet e outros serviços no ramo do alimento, com integração ao WhatsApp.",
-      achievements: [
-        "Layout organizado com informações essenciais sobre a Simone",
-        "Forms para que os clientes possam informar as seus desejos, que formata para envio direto ao Whatsapp da empreendedora",
-        "Area de Administrador, para edição das informações na landing page",
-      ],
-      tech: ["React", "Vite", "Firebase", "TailwindCSS"],
       highlight: false,
     },
 
@@ -78,9 +62,6 @@ export function Experience() {
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-pink-400 to-orange-500 bg-clip-text text-transparent">
             Experiência & Projetos
           </h2>
-          <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 mx-auto px-2">
-            Do código à inteligência artificial — construindo soluções inovadoras
-          </p>
         </motion.div>
 
         <div className="relative">

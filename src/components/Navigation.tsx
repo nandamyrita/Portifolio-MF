@@ -13,7 +13,7 @@ export function Navigation() {
     { name: "Sobre", href: "#about" },
     { name: "Experiências", href: "#experience" },
     { name: "Projetos", href: "#projects" },
-    { name: "Skills", href: "#skills" },
+    { name: "Formação", href: "#education" },
     { name: "Contato", href: "#contact" },
   ];
 
@@ -33,11 +33,11 @@ export function Navigation() {
             whileTap={{ scale: 0.95 }}
             className="md:hidden relative group"
           >
-            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-pink-500/20 to-orange-500/20 border border-pink-500/40 flex items-center justify-center overflow-hidden group-hover:border-pink-400 group-hover:shadow-lg group-hover:shadow-pink-500/30 transition-all duration-300">
-              <img 
-                className="w-8 h-8 object-contain" 
-                src="/logo.png" 
-                alt="logo" 
+            <div className="w-10 h-10 rounded-lg flex items-center justify-center overflow-hidden">
+              <img
+                className="w-10 h-10 object-contain"
+                src="/nanda-logo-icon.svg"
+                alt="Nanda Developer"
               />
             </div>
           </motion.a>
@@ -53,11 +53,11 @@ export function Navigation() {
                 whileTap={{ scale: 0.95 }}
                 className="relative mr-4 group"
               >
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-pink-500/20 to-orange-500/20 border border-pink-500/40 flex items-center justify-center overflow-hidden group-hover:border-pink-400 group-hover:shadow-lg group-hover:shadow-pink-500/30 transition-all duration-300">
-                  <img 
-                    className="w-8 h-8 object-contain" 
-                    src="/logo.png" 
-                    alt="logo" 
+                <div className="w-10 h-10 rounded-lg flex items-center justify-center overflow-hidden">
+                  <img
+                    className="w-10 h-10 object-contain"
+                    src="/nanda-logo-icon.svg"
+                    alt="Nanda Developer"
                   />
                 </div>
                 {/* Glow effect on hover */}
@@ -171,7 +171,7 @@ export function Navigation() {
                 {item.name}
               </motion.a>
             ))}
-            
+
             {/* Mobile Download CV Button */}
             <motion.a
               href="/CurriculoEstagio.pdf"

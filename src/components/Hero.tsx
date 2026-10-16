@@ -184,7 +184,7 @@ export function Hero() {
                 whileHover={{ scale: 1.02, rotate: 1 }}
                 transition={{ duration: 0.3 }}
               >
-                <img src="/hero.jpg" alt="" className="w-full h-full object-cover" />
+                <img src="/hero.jpg" alt="Maria Fernanda" className="w-full h-full object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-pink-500/20 to-transparent" />
               </motion.div>
 

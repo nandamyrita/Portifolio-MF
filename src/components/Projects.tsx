@@ -13,8 +13,10 @@ import {
 } from "lucide-react";
 import { Button } from "./ui/button";
 import { useState } from "react";
+import { projects as projectDetails } from "../data/portfolio";
+import { ProjectPresentation } from "./ProjectPresentation";
 
-type Category = "Todos" | "Web" | "Front-End" | "SaaS" | "AI/ML" | "Dashboard";
+type Category = "Todos" | "Web" | "Front-End" | "SaaS" | "AI/ML" | "Dashboard" | "Mobile";
 
 interface Project {
   title: string;
@@ -31,15 +33,31 @@ interface Project {
 export function Projects() {
   const [selectedCategory, setSelectedCategory] = useState<Category>("Todos");
   const [showAll, setShowAll] = useState(false);
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [semester, setSemester] = useState('all');
+  const detailsFor = (project: Project) => projectDetails.find(
+    details => details.github.replace(/\.git$/, '').toLowerCase() === project.github?.replace(/\.git$/, '').toLowerCase()
+  );
 
   const categories = [
     { name: "Todos" as Category, icon: Layers },
     { name: "Web" as Category, icon: Globe },
     { name: "AI/ML" as Category, icon: Brain },
     { name: "Dashboard" as Category, icon: Code2 },
+    { name: "Mobile" as Category, icon: Smartphone },
   ];
 
   const projects: Project[] = [
+    ...projectDetails.filter(project => ['patty-nails', 'center-pet'].includes(project.slug)).map(project => ({
+      title: project.name,
+      description: project.description,
+      image: project.image ? `/${project.image}` : '',
+      tech: project.technologies,
+      gradient: 'from-pink-400 to-rose-500',
+      category: (project.slug === 'center-pet' ? 'Mobile' : 'Web') as Category,
+      github: project.github,
+      live: project.live,
+    })),
     {
       title: "EstocaAi",
       description:
@@ -103,10 +121,15 @@ export function Projects() {
 
   ];
 
-  const filteredProjects =
+  const categoryProjects =
     selectedCategory === "Todos"
       ? projects
       : projects.filter((project) => project.category === selectedCategory);
+
+  const filteredProjects = categoryProjects.filter(project => {
+    const value = detailsFor(project)?.semester;
+    return semester === 'all' || (semester === 'pending' ? !value : value === Number(semester));
+  });
 
   const displayedProjects = showAll
     ? filteredProjects
@@ -135,6 +158,17 @@ export function Projects() {
           </p>
         </motion.div>
 
+        <div className="flex flex-wrap justify-center gap-2 mb-4" role="group" aria-label="Filtrar por semestre">
+          {[['all', 'Todos os projetos'], ...[2, 3, 4, 5].map(value => [String(value), `${value}º semestre`]), ['pending', 'Complementares']].map(([value, label]) => (
+            <button key={value} type="button" aria-pressed={semester === value}
+              onClick={() => setSemester(value)}
+              className={`px-3 py-2 rounded-lg text-xs border border-pink-500/30 ${semester === value ? 'bg-pink-500 text-white' : 'text-pink-500 hover:bg-pink-500/10'}`}>
+              {label}
+            </button>
+          ))}
+        </div>
+        <p className="text-center text-xs text-gray-500 dark:text-gray-400 mb-6">2º: Patty Nails · 3º: EstocaAi · 4º: Simone Buffet · 5º: Center Pet.</p>
+
         {/* Category Navigation */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -148,17 +182,12 @@ export function Projects() {
             const isActive = selectedCategory === category.name;
 
             return (
-              <motion.button
+              <button
                 key={category.name}
                 onClick={() => {
                   setSelectedCategory(category.name);
                   setShowAll(false);
                 }}
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: index * 0.05 }}
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.95 }}
                 className={`
                   relative px-3 py-2 sm:px-6 sm:py-3 rounded-lg sm:rounded-xl font-medium transition-all duration-300
                   flex items-center gap-1.5 sm:gap-2 overflow-hidden group text-xs sm:text-sm
@@ -169,43 +198,15 @@ export function Projects() {
                   }
                 `}
               >
-                {/* Background animation */}
-                {!isActive && (
-                  <motion.div
-                    className="absolute inset-0 bg-gradient-to-r from-pink-500/10 to-rose-500/10"
-                    initial={{ scale: 0, opacity: 0 }}
-                    whileHover={{ scale: 1, opacity: 1 }}
-                    transition={{ duration: 0.3 }}
-                  />
-                )}
-
-                {/* Shine effect */}
-                <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
-                  initial={{ x: "-100%" }}
-                  animate={isActive ? { x: "100%" } : {}}
-                  transition={{
-                    duration: 1.5,
-                    repeat: Infinity,
-                    repeatDelay: 2,
-                  }}
-                />
-
-                <Icon
-                  className={`h-4 w-4 sm:h-5 sm:w-5 relative z-10 ${
-                    isActive ? "animate-pulse" : ""
-                  }`}
-                />
+                <Icon className="h-4 w-4 sm:h-5 sm:w-5 relative z-10" />
                 <span className="relative z-10">{category.name}</span>
 
                 {isActive && (
-                  <motion.div
-                    layoutId="activeCategory"
+                  <div
                     className="absolute inset-0 border-2 border-white/30 rounded-xl"
-                    transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
                   />
                 )}
-              </motion.button>
+              </button>
             );
           })}
         </motion.div>
@@ -232,64 +233,51 @@ export function Projects() {
                 {/* Action Icons - GitHub & Live Site */}
                 <div className="absolute top-3 right-3 sm:top-4 sm:right-4 z-20 flex gap-1.5 sm:gap-2">
                   {project.github && (
-                    <motion.a
+                    <a
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      initial={{ opacity: 0, scale: 0, rotate: -180 }}
-                      animate={{ opacity: 1, scale: 1, rotate: 0 }}
-                      transition={{ delay: 0.2 + index * 0.05, type: "spring" }}
-                      whileHover={{ scale: 1.15, rotate: 12 }}
-                      whileTap={{ scale: 0.9 }}
                       className="bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm border border-pink-500/30 hover:border-pink-400/60 rounded-md sm:rounded-lg p-1.5 sm:p-2 transition-all hover:bg-pink-500/20 group/icon"
                       title="Ver Código no GitHub"
                     >
                       <Github className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-pink-500 dark:text-pink-300 group-hover/icon:text-pink-400 dark:group-hover/icon:text-pink-100 transition-colors" />
-                    </motion.a>
+                    </a>
                   )}
 
                   {project.live && (
-                    <motion.a
+                    <a
                       href={project.live}
                       target="_blank"
                       rel="noopener noreferrer"
-                      initial={{ opacity: 0, scale: 0, rotate: 180 }}
-                      animate={{ opacity: 1, scale: 1, rotate: 0 }}
-                      transition={{ delay: 0.3 + index * 0.05, type: "spring" }}
-                      whileHover={{ scale: 1.15, rotate: -12 }}
-                      whileTap={{ scale: 0.9 }}
                       className="bg-gradient-to-r from-pink-500 to-rose-500 rounded-md sm:rounded-lg p-1.5 sm:p-2 hover:from-pink-600 hover:to-rose-600 transition-all shadow-lg shadow-pink-500/30 group/icon"
                       title="Ver Site Hospedado"
                     >
-                      <ExternalLink className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-white group-hover/icon:rotate-45 transition-transform" />
-                    </motion.a>
+                      <ExternalLink className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-white" />
+                    </a>
                   )}
                 </div>
 
                 {/* Featured Badge */}
                 {project.featured && (
                   <div className="absolute top-3 left-3 sm:top-4 sm:left-4 z-20">
-                    <motion.div
-                      initial={{ scale: 0, rotate: -180 }}
-                      animate={{ scale: 1, rotate: 0 }}
-                      transition={{ delay: 0.3 + index * 0.1, type: "spring" }}
+                    <div
                       className="bg-gradient-to-r from-pink-500 to-rose-500 text-white px-2 py-0.5 sm:px-3 sm:py-1 rounded-md sm:rounded-lg text-[10px] sm:text-xs flex items-center gap-1 shadow-lg"
                     >
                       <Sparkles className="h-2.5 w-2.5 sm:h-3 sm:w-3" />
                       Destaque
-                    </motion.div>
+                    </div>
                   </div>
                 )}
 
                 {/* Project image */}
                 <div className="relative h-40 sm:h-48 overflow-hidden">
-                  <motion.img
+                  {project.image ? <motion.img
                     src={project.image}
                     alt={project.title}
                     className="w-full h-full object-cover"
                     whileHover={{ scale: 1.1 }}
                     transition={{ duration: 0.6, ease: "easeOut" }}
-                  />
+                  /> : <div className="w-full h-full flex flex-col items-center justify-center gap-2 bg-pink-500/10 text-pink-600 dark:text-pink-300"><span className="text-xl">{project.title}</span><span className="text-xs">Captura de tela pendente</span></div>}
                   <motion.div
                     className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-20 group-hover:opacity-40 transition-opacity duration-300`}
                   />
@@ -303,6 +291,7 @@ export function Projects() {
                       className="text-center"
                     >
                       <motion.div
+                        onClick={() => setSelectedProject(project)}
                         whileHover={{ scale: 1.1 }}
                         className="bg-gradient-to-r from-pink-500 to-rose-500 rounded-full px-4 sm:px-6 py-2 sm:py-3 cursor-pointer shadow-xl"
                       >
@@ -320,6 +309,7 @@ export function Projects() {
                   <h3 className="text-lg sm:text-xl mb-1.5 sm:mb-2 text-gray-900 dark:text-white group-hover:text-pink-500 dark:group-hover:text-pink-300 transition-colors">
                     {project.title}
                   </h3>
+                  <p className="text-xs text-gray-500 mb-2">{detailsFor(project)?.semester ? `${detailsFor(project)?.semester}º semestre` : 'Projeto complementar'}</p>
                   <p className="text-gray-500 dark:text-gray-400 text-xs sm:text-sm mb-3 sm:mb-4 leading-relaxed line-clamp-2">
                     {project.description}
                   </p>
@@ -341,12 +331,10 @@ export function Projects() {
                   </div>
                 </div>
 
-                {/* Decorative elements */}
-                <div className="absolute top-4 right-4 w-2 h-2 bg-pink-400 rounded-full animate-pulse" />
-                <div
-                  className="absolute bottom-4 right-4 w-1 h-1 bg-rose-400 rounded-full animate-pulse"
-                  style={{ animationDelay: "0.5s" }}
-                />
+                <button type="button" onClick={() => setSelectedProject(project)} className="mx-4 sm:mx-6 mb-5 px-4 py-2 text-sm text-pink-500 border border-pink-500/30 rounded-lg hover:bg-pink-500/10">
+                  Ver detalhes e participação
+                </button>
+
               </motion.div>
             ))}
           </motion.div>
@@ -382,11 +370,12 @@ export function Projects() {
             className="text-center py-10 sm:py-16"
           >
             <div className="text-gray-500 dark:text-gray-400 text-base sm:text-lg">
-              Nenhum projeto encontrado nesta categoria.
+              Nenhum projeto encontrado neste filtro.
             </div>
           </motion.div>
         )}
       </div>
+      {selectedProject && <ProjectPresentation project={selectedProject} details={detailsFor(selectedProject)} onClose={() => setSelectedProject(null)} />}
     </section>
   );
 }

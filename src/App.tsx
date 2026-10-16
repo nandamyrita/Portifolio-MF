@@ -4,7 +4,7 @@ import { Hero } from "./components/Hero";
 import { About } from "./components/About";
 import { Experience } from "./components/Experience";
 import { Projects } from "./components/Projects";
-import { Skills } from "./components/Skills";
+import { Academic } from "./components/Academic";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
 import { ThemeProvider } from "./contexts/ThemeContext";
@@ -33,8 +33,8 @@ export default function App() {
             <Projects />
           </section>
 
-          <section id="skills">
-            <Skills />
+          <section id="education">
+            <Academic />
           </section>
 
           <section id="contact">

@@ -330,7 +330,7 @@ export function About() {
             >
               <Star className="h-6 w-6 sm:h-8 sm:w-8" />
             </motion.div>
-            <span className="text-center">Tecnologias que domino</span>
+            <span className="text-center">Tecnologias</span>
             <motion.div
               animate={{ rotate: [0, -360] }}
               transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
